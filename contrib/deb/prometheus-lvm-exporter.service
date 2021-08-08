@@ -1,0 +1,13 @@
+[Unit]
+Description=Prometheus exporter for LVM metrics
+After=network-online.target
+
+[Service]
+EnvironmentFile=-/etc/default/prometheus-lvm-exporter
+ExecStart=/usr/sbin/prometheus-lvm-exporter $PROM_LVM_EXPORTER_ARGS
+ProtectHome=true
+User=root
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

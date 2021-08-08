@@ -1,0 +1,42 @@
+# Configuration for GoReleaser
+# https://goreleaser.com/
+
+project_name: prometheus-lvm-exporter
+
+builds:
+  - main: .
+    binary: prometheus-lvm-exporter
+    goos:
+      - linux
+
+nfpms:
+  - description: Prometheus exporter for LVM metrics
+    maintainer: M. Hanselmann
+    bindir: /usr/sbin
+    formats:
+      - deb
+      - rpm
+    dependencies:
+      - lvm2
+    contents:
+      - src: contrib/deb/prometheus-lvm-exporter.service
+        dst: /lib/systemd/system/prometheus-lvm-exporter.service
+      - src: contrib/deb/prometheus-lvm-exporter.default
+        dst: /etc/default/prometheus-lvm-exporter
+        type: config
+
+archives:
+  - format: tar.gz
+    wrap_in_directory: true
+    files:
+      - LICENSE
+      - README.md
+
+release:
+  draft: true
+  prerelease: auto
+
+snapshot:
+  name_template: '{{ .Tag }}~snapshot{{ replace (replace .Date ":" "") "-" "" }}-g{{ .ShortCommit }}'
+
+# vim: set sw=2 sts=2 et :

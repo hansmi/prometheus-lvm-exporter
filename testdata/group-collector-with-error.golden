@@ -1,0 +1,15 @@
+# HELP lvm_m_count 
+# TYPE lvm_m_count gauge
+lvm_m_count{m_key1="2"} 22
+lvm_m_count{m_key1="3"} 11.5
+# HELP lvm_test_info 
+# TYPE lvm_test_info gauge
+lvm_test_info{m_info1="",m_key1="1"} 1
+lvm_test_info{m_info1="",m_key1="3"} 1
+lvm_test_info{m_info1="info:2",m_key1="2"} 1
+# HELP lvm_unknown_field_count Fields reported by LVM not recognized by exporter
+# TYPE lvm_unknown_field_count gauge
+lvm_unknown_field_count{details="text, unknown key",group="seg"} 2
+# HELP lvm_up Whether scrape was successful
+# TYPE lvm_up gauge
+lvm_up{status="2 error(s) occurred:\n* field col1: col1 error\n* field count: strconv.ParseFloat: parsing \"true\": invalid syntax"} 0
