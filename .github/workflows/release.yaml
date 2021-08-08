@@ -6,9 +6,7 @@ on:
     branches:
       - main
     tags:
-  release:
-    types:
-      - published
+      - 'v[0-9]+.*'
 
 permissions:
   contents: write
@@ -32,9 +30,9 @@ jobs:
         id: vars
         env:
           EVENT_NAME: ${{ github.event_name }}
-          EVENT_ACTION: ${{ github.event.action }}
+          REF: ${{ github.ref }}
         run: |
-          if [[ "$EVENT_NAME" = release && "$EVENT_ACTION" = published ]]; then
+          if [[ "$EVENT_NAME" = push && "$REF" = refs/tags/v[0-9]*.* ]]; then
             args=()
           else
             args=( --skip-publish )
