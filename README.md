@@ -13,7 +13,7 @@ or as a label on a per-entity info metric.
 
 ## Usage
 
-`prometheus-lvm-exporter` listens on TCP port 8081 by default. To listen on
+`prometheus-lvm-exporter` listens on TCP port 9845 by default. To listen on
 another address use the `-web.listen-address` flag (e.g.
 `-web.listen-address=127.0.0.1:3000`).
 

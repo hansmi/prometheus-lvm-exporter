@@ -17,7 +17,7 @@ import (
 const metricPrefix = "lvm_"
 
 func main() {
-	listenAddress := flag.String("web.listen-address", ":8081", "The address to listen on for HTTP requests")
+	listenAddress := flag.String("web.listen-address", ":9845", "The address to listen on for HTTP requests")
 	configFile := flag.String("web.config", "", "Path to config yaml file that can enable TLS or authentication")
 	metricsPath := flag.String("web.telemetry-path", "/metrics", "Path under which to expose metrics")
 	disableExporterMetrics := flag.Bool("web.disable-exporter-metrics", false, "Exclude metrics about the exporter itself")
