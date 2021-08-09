@@ -8,6 +8,8 @@ builds:
     binary: prometheus-lvm-exporter
     goos:
       - linux
+    flags:
+      - -trimpath
 
 nfpms:
   - description: Prometheus exporter for LVM metrics
