@@ -1,0 +1,390 @@
+# HELP lvm_lv_active_exclusively Set if the LV is active exclusively
+# TYPE lvm_lv_active_exclusively gauge
+lvm_lv_active_exclusively{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 1
+lvm_lv_active_exclusively{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 1
+lvm_lv_active_exclusively{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 1
+lvm_lv_active_exclusively{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 1
+lvm_lv_active_exclusively{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 1
+lvm_lv_active_exclusively{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 1
+# HELP lvm_lv_active_locally Set if the LV is active locally
+# TYPE lvm_lv_active_locally gauge
+lvm_lv_active_locally{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 1
+lvm_lv_active_locally{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 1
+lvm_lv_active_locally{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 1
+lvm_lv_active_locally{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 1
+lvm_lv_active_locally{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 1
+lvm_lv_active_locally{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 1
+# HELP lvm_lv_active_remotely Set if the LV is active remotely
+# TYPE lvm_lv_active_remotely gauge
+lvm_lv_active_remotely{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 0
+lvm_lv_active_remotely{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 0
+lvm_lv_active_remotely{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 0
+lvm_lv_active_remotely{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 0
+lvm_lv_active_remotely{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 0
+lvm_lv_active_remotely{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 0
+# HELP lvm_lv_allocation_locked Set if LV is locked against allocation changes
+# TYPE lvm_lv_allocation_locked gauge
+lvm_lv_allocation_locked{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 0
+lvm_lv_allocation_locked{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 0
+lvm_lv_allocation_locked{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 0
+lvm_lv_allocation_locked{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 0
+lvm_lv_allocation_locked{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 0
+lvm_lv_allocation_locked{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 0
+# HELP lvm_lv_check_needed For thin pools and cache volumes, whether metadata check is needed
+# TYPE lvm_lv_check_needed gauge
+lvm_lv_check_needed{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} -1
+lvm_lv_check_needed{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} -1
+lvm_lv_check_needed{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} -1
+lvm_lv_check_needed{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} -1
+lvm_lv_check_needed{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} -1
+lvm_lv_check_needed{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} -1
+# HELP lvm_lv_converting Set if LV is being converted
+# TYPE lvm_lv_converting gauge
+lvm_lv_converting{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 0
+lvm_lv_converting{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 0
+lvm_lv_converting{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 0
+lvm_lv_converting{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 0
+lvm_lv_converting{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 0
+lvm_lv_converting{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 0
+# HELP lvm_lv_copy_percent For Cache, RAID, mirrors and pvmove, current percentage in-sync
+# TYPE lvm_lv_copy_percent gauge
+lvm_lv_copy_percent{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 100
+# HELP lvm_lv_device_open Set if LV device is open
+# TYPE lvm_lv_device_open gauge
+lvm_lv_device_open{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 1
+lvm_lv_device_open{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 1
+lvm_lv_device_open{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 1
+lvm_lv_device_open{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 0
+lvm_lv_device_open{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 1
+lvm_lv_device_open{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 0
+# HELP lvm_lv_fixed_minor Set if LV has fixed minor number assigned
+# TYPE lvm_lv_fixed_minor gauge
+lvm_lv_fixed_minor{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 0
+lvm_lv_fixed_minor{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 0
+lvm_lv_fixed_minor{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 0
+lvm_lv_fixed_minor{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 0
+lvm_lv_fixed_minor{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 0
+lvm_lv_fixed_minor{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 0
+# HELP lvm_lv_historical Set if the LV is historical
+# TYPE lvm_lv_historical gauge
+lvm_lv_historical{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 0
+lvm_lv_historical{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 0
+lvm_lv_historical{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 0
+lvm_lv_historical{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 0
+lvm_lv_historical{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 0
+lvm_lv_historical{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 0
+# HELP lvm_lv_image_synced Set if mirror/RAID image is synchronized
+# TYPE lvm_lv_image_synced gauge
+lvm_lv_image_synced{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 0
+lvm_lv_image_synced{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 1
+lvm_lv_image_synced{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 1
+lvm_lv_image_synced{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 0
+lvm_lv_image_synced{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 0
+lvm_lv_image_synced{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 0
+# HELP lvm_lv_inactive_table Set if LV has inactive table present
+# TYPE lvm_lv_inactive_table gauge
+lvm_lv_inactive_table{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 0
+lvm_lv_inactive_table{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 0
+lvm_lv_inactive_table{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 0
+lvm_lv_inactive_table{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 0
+lvm_lv_inactive_table{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 0
+lvm_lv_inactive_table{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 0
+# HELP lvm_lv_info 
+# TYPE lvm_lv_info gauge
+lvm_lv_info{lv_active="active",lv_allocation_policy="inherit",lv_attr="-wi-a-----",lv_convert_lv="",lv_convert_lv_uuid="",lv_data_lv="",lv_data_lv_uuid="",lv_dm_path="/dev/mapper/vgaaa-data",lv_full_name="vgaaa/data",lv_health_status="",lv_host="buster",lv_kernel_cache_policy="",lv_kernel_cache_settings="",lv_kernel_discards="",lv_kernel_metadata_format="",lv_kernel_read_ahead_bytes="131072",lv_layout="linear",lv_metadata_lv="",lv_metadata_lv_uuid="",lv_mirror_log="",lv_mirror_log_uuid="",lv_modules="",lv_move_pv="",lv_move_pv_uuid="",lv_name="data",lv_origin="",lv_origin_uuid="",lv_parent="",lv_path="/dev/vgaaa/data",lv_permissions="writeable",lv_pool_lv="",lv_pool_lv_uuid="",lv_raid_sync_action="",lv_raidintegritymode="",lv_role="public",lv_tags="",lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu",lv_vdo_operating_mode="",lv_when_full=""} 1
+lvm_lv_info{lv_active="active",lv_allocation_policy="inherit",lv_attr="ewi-aor---",lv_convert_lv="",lv_convert_lv_uuid="",lv_data_lv="",lv_data_lv_uuid="",lv_dm_path="/dev/mapper/vgaaa-mirrored_rmeta_0",lv_full_name="vgaaa/mirrored_rmeta_0",lv_health_status="",lv_host="buster",lv_kernel_cache_policy="",lv_kernel_cache_settings="",lv_kernel_discards="",lv_kernel_metadata_format="",lv_kernel_read_ahead_bytes="131072",lv_layout="linear",lv_metadata_lv="",lv_metadata_lv_uuid="",lv_mirror_log="",lv_mirror_log_uuid="",lv_modules="",lv_move_pv="",lv_move_pv_uuid="",lv_name="[mirrored_rmeta_0]",lv_origin="",lv_origin_uuid="",lv_parent="mirrored",lv_path="",lv_permissions="writeable",lv_pool_lv="",lv_pool_lv_uuid="",lv_raid_sync_action="",lv_raidintegritymode="",lv_role="private,raid,metadata",lv_tags="",lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP",lv_vdo_operating_mode="",lv_when_full=""} 1
+lvm_lv_info{lv_active="active",lv_allocation_policy="inherit",lv_attr="ewi-aor---",lv_convert_lv="",lv_convert_lv_uuid="",lv_data_lv="",lv_data_lv_uuid="",lv_dm_path="/dev/mapper/vgaaa-mirrored_rmeta_1",lv_full_name="vgaaa/mirrored_rmeta_1",lv_health_status="",lv_host="buster",lv_kernel_cache_policy="",lv_kernel_cache_settings="",lv_kernel_discards="",lv_kernel_metadata_format="",lv_kernel_read_ahead_bytes="131072",lv_layout="linear",lv_metadata_lv="",lv_metadata_lv_uuid="",lv_mirror_log="",lv_mirror_log_uuid="",lv_modules="",lv_move_pv="",lv_move_pv_uuid="",lv_name="[mirrored_rmeta_1]",lv_origin="",lv_origin_uuid="",lv_parent="mirrored",lv_path="",lv_permissions="writeable",lv_pool_lv="",lv_pool_lv_uuid="",lv_raid_sync_action="",lv_raidintegritymode="",lv_role="private,raid,metadata",lv_tags="",lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1",lv_vdo_operating_mode="",lv_when_full=""} 1
+lvm_lv_info{lv_active="active",lv_allocation_policy="inherit",lv_attr="iwi-aor---",lv_convert_lv="",lv_convert_lv_uuid="",lv_data_lv="",lv_data_lv_uuid="",lv_dm_path="/dev/mapper/vgaaa-mirrored_rimage_0",lv_full_name="vgaaa/mirrored_rimage_0",lv_health_status="",lv_host="buster",lv_kernel_cache_policy="",lv_kernel_cache_settings="",lv_kernel_discards="",lv_kernel_metadata_format="",lv_kernel_read_ahead_bytes="131072",lv_layout="linear",lv_metadata_lv="",lv_metadata_lv_uuid="",lv_mirror_log="",lv_mirror_log_uuid="",lv_modules="",lv_move_pv="",lv_move_pv_uuid="",lv_name="[mirrored_rimage_0]",lv_origin="",lv_origin_uuid="",lv_parent="mirrored",lv_path="",lv_permissions="writeable",lv_pool_lv="",lv_pool_lv_uuid="",lv_raid_sync_action="",lv_raidintegritymode="",lv_role="private,raid,image",lv_tags="",lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh",lv_vdo_operating_mode="",lv_when_full=""} 1
+lvm_lv_info{lv_active="active",lv_allocation_policy="inherit",lv_attr="iwi-aor---",lv_convert_lv="",lv_convert_lv_uuid="",lv_data_lv="",lv_data_lv_uuid="",lv_dm_path="/dev/mapper/vgaaa-mirrored_rimage_1",lv_full_name="vgaaa/mirrored_rimage_1",lv_health_status="",lv_host="buster",lv_kernel_cache_policy="",lv_kernel_cache_settings="",lv_kernel_discards="",lv_kernel_metadata_format="",lv_kernel_read_ahead_bytes="131072",lv_layout="linear",lv_metadata_lv="",lv_metadata_lv_uuid="",lv_mirror_log="",lv_mirror_log_uuid="",lv_modules="",lv_move_pv="",lv_move_pv_uuid="",lv_name="[mirrored_rimage_1]",lv_origin="",lv_origin_uuid="",lv_parent="mirrored",lv_path="",lv_permissions="writeable",lv_pool_lv="",lv_pool_lv_uuid="",lv_raid_sync_action="",lv_raidintegritymode="",lv_role="private,raid,image",lv_tags="",lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234",lv_vdo_operating_mode="",lv_when_full=""} 1
+lvm_lv_info{lv_active="active",lv_allocation_policy="inherit",lv_attr="rwi-a-r---",lv_convert_lv="",lv_convert_lv_uuid="",lv_data_lv="",lv_data_lv_uuid="",lv_dm_path="/dev/mapper/vgaaa-mirrored",lv_full_name="vgaaa/mirrored",lv_health_status="",lv_host="buster",lv_kernel_cache_policy="",lv_kernel_cache_settings="",lv_kernel_discards="",lv_kernel_metadata_format="",lv_kernel_read_ahead_bytes="131072",lv_layout="raid,raid1",lv_metadata_lv="",lv_metadata_lv_uuid="",lv_mirror_log="",lv_mirror_log_uuid="",lv_modules="raid",lv_move_pv="",lv_move_pv_uuid="",lv_name="mirrored",lv_origin="",lv_origin_uuid="",lv_parent="",lv_path="/dev/vgaaa/mirrored",lv_permissions="writeable",lv_pool_lv="",lv_pool_lv_uuid="",lv_raid_sync_action="idle",lv_raidintegritymode="",lv_role="public",lv_tags="",lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq",lv_vdo_operating_mode="",lv_when_full=""} 1
+# HELP lvm_lv_initial_image_sync Set if mirror/RAID images underwent initial resynchronization
+# TYPE lvm_lv_initial_image_sync gauge
+lvm_lv_initial_image_sync{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 0
+lvm_lv_initial_image_sync{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 0
+lvm_lv_initial_image_sync{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 0
+lvm_lv_initial_image_sync{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 1
+lvm_lv_initial_image_sync{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 0
+lvm_lv_initial_image_sync{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 0
+# HELP lvm_lv_kernel_major Currently assigned major number or -1 if LV is not active
+# TYPE lvm_lv_kernel_major gauge
+lvm_lv_kernel_major{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 253
+lvm_lv_kernel_major{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 253
+lvm_lv_kernel_major{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 253
+lvm_lv_kernel_major{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 253
+lvm_lv_kernel_major{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 253
+lvm_lv_kernel_major{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 253
+# HELP lvm_lv_kernel_minor Currently assigned minor number or -1 if LV is not active
+# TYPE lvm_lv_kernel_minor gauge
+lvm_lv_kernel_minor{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 3
+lvm_lv_kernel_minor{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 2
+lvm_lv_kernel_minor{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 4
+lvm_lv_kernel_minor{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 5
+lvm_lv_kernel_minor{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 0
+lvm_lv_kernel_minor{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 1
+# HELP lvm_lv_live_table Set if LV has live table present
+# TYPE lvm_lv_live_table gauge
+lvm_lv_live_table{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 1
+lvm_lv_live_table{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 1
+lvm_lv_live_table{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 1
+lvm_lv_live_table{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 1
+lvm_lv_live_table{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 1
+lvm_lv_live_table{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 1
+# HELP lvm_lv_major Persistent major number or -1 if not persistent
+# TYPE lvm_lv_major gauge
+lvm_lv_major{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} -1
+lvm_lv_major{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} -1
+lvm_lv_major{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} -1
+lvm_lv_major{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} -1
+lvm_lv_major{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} -1
+lvm_lv_major{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} -1
+# HELP lvm_lv_merge_failed Set if snapshot merge failed
+# TYPE lvm_lv_merge_failed gauge
+lvm_lv_merge_failed{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} -1
+lvm_lv_merge_failed{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} -1
+lvm_lv_merge_failed{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} -1
+lvm_lv_merge_failed{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} -1
+lvm_lv_merge_failed{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} -1
+lvm_lv_merge_failed{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} -1
+# HELP lvm_lv_merging Set if snapshot LV is being merged to origin
+# TYPE lvm_lv_merging gauge
+lvm_lv_merging{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 0
+lvm_lv_merging{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 0
+lvm_lv_merging{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 0
+lvm_lv_merging{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 0
+lvm_lv_merging{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 0
+lvm_lv_merging{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 0
+# HELP lvm_lv_minor Persistent minor number or -1 if not persistent
+# TYPE lvm_lv_minor gauge
+lvm_lv_minor{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} -1
+lvm_lv_minor{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} -1
+lvm_lv_minor{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} -1
+lvm_lv_minor{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} -1
+lvm_lv_minor{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} -1
+lvm_lv_minor{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} -1
+# HELP lvm_lv_raid_mismatch_count For RAID, number of mismatches found or repaired
+# TYPE lvm_lv_raid_mismatch_count gauge
+lvm_lv_raid_mismatch_count{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 0
+# HELP lvm_lv_read_ahead_bytes Read ahead setting
+# TYPE lvm_lv_read_ahead_bytes gauge
+lvm_lv_read_ahead_bytes{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} -1
+lvm_lv_read_ahead_bytes{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} -1
+lvm_lv_read_ahead_bytes{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} -1
+lvm_lv_read_ahead_bytes{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} -1
+lvm_lv_read_ahead_bytes{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} -1
+lvm_lv_read_ahead_bytes{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} -1
+# HELP lvm_lv_seg_count Number of segments in LV
+# TYPE lvm_lv_seg_count gauge
+lvm_lv_seg_count{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 1
+lvm_lv_seg_count{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 1
+lvm_lv_seg_count{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 1
+lvm_lv_seg_count{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 1
+lvm_lv_seg_count{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 1
+lvm_lv_seg_count{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 1
+# HELP lvm_lv_size_bytes Size of LV
+# TYPE lvm_lv_size_bytes gauge
+lvm_lv_size_bytes{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 4.194304e+06
+lvm_lv_size_bytes{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 2.9360128e+07
+lvm_lv_size_bytes{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 2.9360128e+07
+lvm_lv_size_bytes{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 2.9360128e+07
+lvm_lv_size_bytes{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 4.194304e+06
+lvm_lv_size_bytes{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 4.194304e+06
+# HELP lvm_lv_skip_activation Set if LV is skipped on activation
+# TYPE lvm_lv_skip_activation gauge
+lvm_lv_skip_activation{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 0
+lvm_lv_skip_activation{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 0
+lvm_lv_skip_activation{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 0
+lvm_lv_skip_activation{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 0
+lvm_lv_skip_activation{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 0
+lvm_lv_skip_activation{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 0
+# HELP lvm_lv_snapshot_invalid Set if snapshot LV is invalid
+# TYPE lvm_lv_snapshot_invalid gauge
+lvm_lv_snapshot_invalid{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} -1
+lvm_lv_snapshot_invalid{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} -1
+lvm_lv_snapshot_invalid{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} -1
+lvm_lv_snapshot_invalid{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} -1
+lvm_lv_snapshot_invalid{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} -1
+lvm_lv_snapshot_invalid{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} -1
+# HELP lvm_lv_suspended Set if LV is suspended
+# TYPE lvm_lv_suspended gauge
+lvm_lv_suspended{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 0
+lvm_lv_suspended{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 0
+lvm_lv_suspended{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 0
+lvm_lv_suspended{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 0
+lvm_lv_suspended{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 0
+lvm_lv_suspended{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 0
+# HELP lvm_lv_sync_percent For Cache, RAID, mirrors and pvmove, current percentage in-sync
+# TYPE lvm_lv_sync_percent gauge
+lvm_lv_sync_percent{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 100
+# HELP lvm_lv_time Creation time of the LV, if known
+# TYPE lvm_lv_time gauge
+lvm_lv_time{lv_uuid="Egw38P-CT81-ZnK0-vBC3-iEnY-11XL-mz23e1"} 1.628538429e+09
+lvm_lv_time{lv_uuid="LlZ3Rq-bBXT-f36k-oPQn-WdcR-OQ2I-KzVfIh"} 1.628538429e+09
+lvm_lv_time{lv_uuid="O8BdUR-sp9G-y52K-kdc7-wyP0-aMqR-6Ls234"} 1.628538429e+09
+lvm_lv_time{lv_uuid="X5tkZ2-pzPA-Aumf-lCF1-eKI8-AuPk-lf1VHq"} 1.628538429e+09
+lvm_lv_time{lv_uuid="gLHiHN-1hen-1gy2-asXt-26ZT-UCrh-Va08BP"} 1.628538429e+09
+lvm_lv_time{lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 1.628424605e+09
+# HELP lvm_pv_allocatable Set if this device can be used for allocation
+# TYPE lvm_pv_allocatable gauge
+lvm_pv_allocatable{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 1
+lvm_pv_allocatable{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 1
+# HELP lvm_pv_ba_size_bytes Size of PV Bootloader Area
+# TYPE lvm_pv_ba_size_bytes gauge
+lvm_pv_ba_size_bytes{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 0
+lvm_pv_ba_size_bytes{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 0
+# HELP lvm_pv_ba_start Offset to the start of PV Bootloader Area on the underlying device
+# TYPE lvm_pv_ba_start gauge
+lvm_pv_ba_start{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 0
+lvm_pv_ba_start{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 0
+# HELP lvm_pv_dev_size_bytes Size of underlying device
+# TYPE lvm_pv_dev_size_bytes gauge
+lvm_pv_dev_size_bytes{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 1.048576e+09
+lvm_pv_dev_size_bytes{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 1.048576e+09
+# HELP lvm_pv_duplicate Set if PV is an unchosen duplicate
+# TYPE lvm_pv_duplicate gauge
+lvm_pv_duplicate{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 0
+lvm_pv_duplicate{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 0
+# HELP lvm_pv_exported Set if this device is exported
+# TYPE lvm_pv_exported gauge
+lvm_pv_exported{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 0
+lvm_pv_exported{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 0
+# HELP lvm_pv_ext_vsn PV header extension version
+# TYPE lvm_pv_ext_vsn gauge
+lvm_pv_ext_vsn{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 2
+lvm_pv_ext_vsn{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 2
+# HELP lvm_pv_free_bytes Total amount of unallocated space
+# TYPE lvm_pv_free_bytes gauge
+lvm_pv_free_bytes{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 1.010827264e+09
+lvm_pv_free_bytes{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 1.00663296e+09
+# HELP lvm_pv_in_use Set if PV is used
+# TYPE lvm_pv_in_use gauge
+lvm_pv_in_use{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 1
+lvm_pv_in_use{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 1
+# HELP lvm_pv_info 
+# TYPE lvm_pv_info gauge
+lvm_pv_info{pv_attr="a--",pv_fmt="lvm2",pv_name="/dev/loop0",pv_tags="",pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 1
+lvm_pv_info{pv_attr="a--",pv_fmt="lvm2",pv_name="/dev/loop1",pv_tags="",pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 1
+# HELP lvm_pv_major Device major number
+# TYPE lvm_pv_major gauge
+lvm_pv_major{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 7
+lvm_pv_major{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 7
+# HELP lvm_pv_mda_count Number of metadata areas
+# TYPE lvm_pv_mda_count gauge
+lvm_pv_mda_count{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 1
+lvm_pv_mda_count{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 1
+# HELP lvm_pv_mda_free_bytes Free metadata area space
+# TYPE lvm_pv_mda_free_bytes gauge
+lvm_pv_mda_free_bytes{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 518656
+lvm_pv_mda_free_bytes{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 518656
+# HELP lvm_pv_mda_size_bytes Size of smallest metadata area
+# TYPE lvm_pv_mda_size_bytes gauge
+lvm_pv_mda_size_bytes{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 1.04448e+06
+lvm_pv_mda_size_bytes{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 1.04448e+06
+# HELP lvm_pv_mda_used_count Number of metadata areas in use
+# TYPE lvm_pv_mda_used_count gauge
+lvm_pv_mda_used_count{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 1
+lvm_pv_mda_used_count{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 1
+# HELP lvm_pv_minor Device minor number
+# TYPE lvm_pv_minor gauge
+lvm_pv_minor{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 0
+lvm_pv_minor{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 1
+# HELP lvm_pv_missing Set if this device is missing in system
+# TYPE lvm_pv_missing gauge
+lvm_pv_missing{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 0
+lvm_pv_missing{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 0
+# HELP lvm_pv_pe_alloc_count Total number of allocated Physical Extents
+# TYPE lvm_pv_pe_alloc_count gauge
+lvm_pv_pe_alloc_count{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 8
+lvm_pv_pe_alloc_count{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 9
+# HELP lvm_pv_pe_count Total number of Physical Extents
+# TYPE lvm_pv_pe_count gauge
+lvm_pv_pe_count{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 249
+lvm_pv_pe_count{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 249
+# HELP lvm_pv_pe_start Offset to the start of data on the underlying device
+# TYPE lvm_pv_pe_start gauge
+lvm_pv_pe_start{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 1.048576e+06
+lvm_pv_pe_start{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 1.048576e+06
+# HELP lvm_pv_size_bytes Size of PV
+# TYPE lvm_pv_size_bytes gauge
+lvm_pv_size_bytes{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 1.044381696e+09
+lvm_pv_size_bytes{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 1.044381696e+09
+# HELP lvm_pv_used Total amount of allocated space
+# TYPE lvm_pv_used gauge
+lvm_pv_used{pv_uuid="WVIH97-eRwc-thU9-mCj9-80zl-UDp6-VlhBOg"} 3.3554432e+07
+lvm_pv_used{pv_uuid="yc1zVe-9eOY-3bsX-qwqN-Wkk0-eDze-Rgrmzh"} 3.7748736e+07
+# HELP lvm_unknown_field_count Fields reported by LVM not recognized by exporter
+# TYPE lvm_unknown_field_count gauge
+lvm_unknown_field_count{details="",group="lv"} 0
+lvm_unknown_field_count{details="",group="pv"} 0
+lvm_unknown_field_count{details="",group="vg"} 0
+# HELP lvm_up Whether scrape was successful
+# TYPE lvm_up gauge
+lvm_up{status=""} 1
+# HELP lvm_vg_clustered Set if VG is clustered
+# TYPE lvm_vg_clustered gauge
+lvm_vg_clustered{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 0
+# HELP lvm_vg_exported Set if VG is exported
+# TYPE lvm_vg_exported gauge
+lvm_vg_exported{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 0
+# HELP lvm_vg_extendable Set if VG is extendable
+# TYPE lvm_vg_extendable gauge
+lvm_vg_extendable{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 1
+# HELP lvm_vg_extent_count Total number of Physical Extents
+# TYPE lvm_vg_extent_count gauge
+lvm_vg_extent_count{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 498
+# HELP lvm_vg_extent_size_bytes Size of Physical Extents
+# TYPE lvm_vg_extent_size_bytes gauge
+lvm_vg_extent_size_bytes{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 4.194304e+06
+# HELP lvm_vg_free_bytes Total amount of free space in bytes
+# TYPE lvm_vg_free_bytes gauge
+lvm_vg_free_bytes{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 2.017460224e+09
+# HELP lvm_vg_free_count Total number of unallocated Physical Extents
+# TYPE lvm_vg_free_count gauge
+lvm_vg_free_count{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 481
+# HELP lvm_vg_info 
+# TYPE lvm_vg_info gauge
+lvm_vg_info{vg_allocation_policy="normal",vg_attr="wz--n-",vg_fmt="lvm2",vg_lock_args="",vg_lock_type="",vg_name="vgaaa",vg_permissions="writeable",vg_systemid="",vg_tags="",vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 1
+# HELP lvm_vg_lv_count Number of LVs
+# TYPE lvm_vg_lv_count gauge
+lvm_vg_lv_count{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 2
+# HELP lvm_vg_max_lv Maximum number of LVs allowed in VG or 0 if unlimited
+# TYPE lvm_vg_max_lv gauge
+lvm_vg_max_lv{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 0
+# HELP lvm_vg_max_pv Maximum number of PVs allowed in VG or 0 if unlimited
+# TYPE lvm_vg_max_pv gauge
+lvm_vg_max_pv{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 0
+# HELP lvm_vg_mda_copies Target number of in use metadata areas in the VG
+# TYPE lvm_vg_mda_copies gauge
+lvm_vg_mda_copies{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 0
+# HELP lvm_vg_mda_count Number of metadata areas
+# TYPE lvm_vg_mda_count gauge
+lvm_vg_mda_count{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 2
+# HELP lvm_vg_mda_free_bytes Free metadata area space for this VG
+# TYPE lvm_vg_mda_free_bytes gauge
+lvm_vg_mda_free_bytes{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 518656
+# HELP lvm_vg_mda_size_bytes Size of smallest metadata area for this VG
+# TYPE lvm_vg_mda_size_bytes gauge
+lvm_vg_mda_size_bytes{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 1.04448e+06
+# HELP lvm_vg_mda_used_count Number of metadata areas in use on this VG
+# TYPE lvm_vg_mda_used_count gauge
+lvm_vg_mda_used_count{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 2
+# HELP lvm_vg_missing_pv_count Number of PVs in VG which are missing
+# TYPE lvm_vg_missing_pv_count gauge
+lvm_vg_missing_pv_count{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 0
+# HELP lvm_vg_partial Set if VG is partial
+# TYPE lvm_vg_partial gauge
+lvm_vg_partial{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 0
+# HELP lvm_vg_pv_count Number of PVs in VG
+# TYPE lvm_vg_pv_count gauge
+lvm_vg_pv_count{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 2
+# HELP lvm_vg_seqno Revision number of internal metadata
+# TYPE lvm_vg_seqno gauge
+lvm_vg_seqno{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 5
+# HELP lvm_vg_shared Set if VG is shared
+# TYPE lvm_vg_shared gauge
+lvm_vg_shared{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 0
+# HELP lvm_vg_size_bytes Total size of VG in bytes
+# TYPE lvm_vg_size_bytes gauge
+lvm_vg_size_bytes{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 2.088763392e+09
+# HELP lvm_vg_snap_count Number of snapshots
+# TYPE lvm_vg_snap_count gauge
+lvm_vg_snap_count{vg_uuid="Uq6z0j-D3zp-fNVa-frk9-s83o-81qH-8vfnWG"} 0
