@@ -46,6 +46,6 @@ release:
   prerelease: auto
 
 snapshot:
-  name_template: '{{ .Tag }}.snapshot{{ replace (replace .Date ":" "") "-" "" }}.g{{ .ShortCommit }}'
+  name_template: '{{ incpatch .Version }}-snapshot{{ replace (replace .Date ":" "") "-" "" }}+g{{ .ShortCommit }}'
 
 # vim: set sw=2 sts=2 et :
