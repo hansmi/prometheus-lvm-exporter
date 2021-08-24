@@ -5,7 +5,7 @@ on:
   pull_request:
   push:
   schedule:
-    - cron:  '45 15 * * 1'
+    - cron:  '45 15 */9 * *'
 
 permissions:
   contents: read
