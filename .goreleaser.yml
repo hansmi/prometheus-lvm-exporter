@@ -6,6 +6,8 @@ project_name: prometheus-lvm-exporter
 builds:
   - main: .
     binary: prometheus-lvm-exporter
+    env:
+      - CGO_ENABLED=0
     goos:
       - linux
     flags:
