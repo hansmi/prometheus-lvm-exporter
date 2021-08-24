@@ -1,1 +1,1 @@
-PROM_LVM_EXPORTER_ARGS='--web.listen=localhost:8180'
+PROM_LVM_EXPORTER_ARGS='--web.listen-address=localhost:9845'
