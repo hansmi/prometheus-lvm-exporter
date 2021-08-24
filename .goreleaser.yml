@@ -34,6 +34,11 @@ nfpms:
         dst: /etc/default/prometheus-lvm-exporter
         type: config
 
+    scripts:
+      postinstall: "contrib/postinstall.sh"
+      preremove: "contrib/preremove.sh"
+      postremove: "contrib/postremove.sh"
+
 archives:
   - format: tar.gz
     wrap_in_directory: true
