@@ -26,9 +26,9 @@ nfpms:
         dst: /usr/share/doc/prometheus-lvm-exporter/README.md
       - src: ./LICENSE
         dst: /usr/share/doc/prometheus-lvm-exporter/LICENSE
-      - src: contrib/deb/prometheus-lvm-exporter.service
+      - src: contrib/systemd/prometheus-lvm-exporter.service
         dst: /lib/systemd/system/prometheus-lvm-exporter.service
-      - src: contrib/deb/prometheus-lvm-exporter.default
+      - src: contrib/systemd/prometheus-lvm-exporter.default
         dst: /etc/default/prometheus-lvm-exporter
         type: config
 
