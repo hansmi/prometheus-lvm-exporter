@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"net/http"
 
@@ -17,6 +18,7 @@ import (
 const metricPrefix = "lvm_"
 
 func main() {
+	showVersion := flag.Bool("version", false, "Output version information and exit")
 	listenAddress := flag.String("web.listen-address", ":9845", "The address to listen on for HTTP requests")
 	configFile := flag.String("web.config", "", "Path to config yaml file that can enable TLS or authentication")
 	metricsPath := flag.String("web.telemetry-path", "/metrics", "Path under which to expose metrics")
@@ -24,6 +26,11 @@ func main() {
 	cmd := flag.String("command", "/usr/sbin/lvm", "Path to the LVM binary")
 
 	flag.Parse()
+
+	if *showVersion {
+		fmt.Println(version.Print("prometheus-lvm-exporter"))
+		return
+	}
 
 	cmdParts, err := shellquote.Split(*cmd)
 	if err != nil {
