@@ -204,6 +204,26 @@ var lvGroup = &group{
 			metricName: "lv_vdo_operating_mode",
 			desc:       "For vdo pools, its current operating mode",
 		},
+		{
+			fieldName:  "lv_descendants",
+			metricName: "lv_descendants",
+			desc:       "LV descendants ignoring any stored history of the ancestry chain",
+		},
+		{
+			fieldName:  "lv_ancestors",
+			metricName: "lv_ancestors",
+			desc:       "LV ancestors ignoring any stored history of the ancestry chain",
+		},
+		{
+			fieldName:  "lv_full_ancestors",
+			metricName: "lv_full_ancestors",
+			desc:       "LV ancestors including stored history of the ancestry chain",
+		},
+		{
+			fieldName:  "lv_full_descendants",
+			metricName: "lv_full_descendants",
+			desc:       "LV descendants including stored history of the ancestry chain",
+		},
 	},
 	metricFields: []*descriptor{
 		{
@@ -277,11 +297,6 @@ var lvGroup = &group{
 			desc:       "Set if LV is locked against allocation changes",
 		},
 		{
-			fieldName:  "lv_ancestors",
-			metricName: "lv_ancestors",
-			desc:       "LV ancestors ignoring any stored history of the ancestry chain",
-		},
-		{
 			fieldName:  "lv_check_needed",
 			metricName: "lv_check_needed",
 			desc:       "For thin pools and cache volumes, whether metadata check is needed",
@@ -292,11 +307,6 @@ var lvGroup = &group{
 			desc:       "Set if LV is being converted",
 		},
 		{
-			fieldName:  "lv_descendants",
-			metricName: "lv_descendants",
-			desc:       "LV descendants ignoring any stored history of the ancestry chain",
-		},
-		{
 			fieldName:  "lv_device_open",
 			metricName: "lv_device_open",
 			desc:       "Set if LV device is open",
@@ -305,16 +315,6 @@ var lvGroup = &group{
 			fieldName:  "lv_fixed_minor",
 			metricName: "lv_fixed_minor",
 			desc:       "Set if LV has fixed minor number assigned",
-		},
-		{
-			fieldName:  "lv_full_ancestors",
-			metricName: "lv_full_ancestors",
-			desc:       "LV ancestors including stored history of the ancestry chain",
-		},
-		{
-			fieldName:  "lv_full_descendants",
-			metricName: "lv_full_descendants",
-			desc:       "LV descendants including stored history of the ancestry chain",
 		},
 		{
 			fieldName:  "lv_historical",
