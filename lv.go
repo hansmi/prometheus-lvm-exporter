@@ -65,14 +65,34 @@ var lvGroup = &group{
 			desc:       "LV allocation policy",
 		},
 		{
+			fieldName:  "lv_ancestors",
+			metricName: "lv_ancestors",
+			desc:       "LV ancestors ignoring any stored history of the ancestry chain",
+		},
+		{
 			fieldName:  "lv_attr",
 			metricName: "lv_attr",
 			desc:       "Various attributes",
 		},
 		{
+			fieldName:  "lv_descendants",
+			metricName: "lv_descendants",
+			desc:       "LV descendants ignoring any stored history of the ancestry chain",
+		},
+		{
 			fieldName:  "lv_dm_path",
 			metricName: "lv_dm_path",
 			desc:       "Internal device-mapper pathname for LV (in /dev/mapper directory)",
+		},
+		{
+			fieldName:  "lv_full_ancestors",
+			metricName: "lv_full_ancestors",
+			desc:       "LV ancestors including stored history of the ancestry chain",
+		},
+		{
+			fieldName:  "lv_full_descendants",
+			metricName: "lv_full_descendants",
+			desc:       "LV descendants including stored history of the ancestry chain",
 		},
 		{
 			fieldName:  "lv_full_name",
@@ -203,26 +223,6 @@ var lvGroup = &group{
 			fieldName:  "vdo_operating_mode",
 			metricName: "lv_vdo_operating_mode",
 			desc:       "For vdo pools, its current operating mode",
-		},
-		{
-			fieldName:  "lv_descendants",
-			metricName: "lv_descendants",
-			desc:       "LV descendants ignoring any stored history of the ancestry chain",
-		},
-		{
-			fieldName:  "lv_ancestors",
-			metricName: "lv_ancestors",
-			desc:       "LV ancestors ignoring any stored history of the ancestry chain",
-		},
-		{
-			fieldName:  "lv_full_ancestors",
-			metricName: "lv_full_ancestors",
-			desc:       "LV ancestors including stored history of the ancestry chain",
-		},
-		{
-			fieldName:  "lv_full_descendants",
-			metricName: "lv_full_descendants",
-			desc:       "LV descendants including stored history of the ancestry chain",
 		},
 	},
 	metricFields: []*descriptor{
