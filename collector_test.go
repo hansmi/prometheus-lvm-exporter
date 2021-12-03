@@ -67,6 +67,7 @@ func TestCollector(t *testing.T) {
 		{name: "multivg"},
 		{name: "mirrored"},
 		{name: "mirrored-unhealthy"},
+		{name: "snapshot"},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
 			c := newCollector()

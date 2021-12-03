@@ -1,0 +1,155 @@
+{
+  "report": [
+    {
+      "vg": [
+        {}
+      ],
+      "pv": [
+        {}
+      ],
+      "lv": [
+        {
+          "lv_uuid": "b3Wegf-3TOd-I5YS-ll0X-RZgI-QxAu-qv0fbc",
+          "lv_name": "lv_home",
+          "lv_ancestors": "",
+          "lv_descendants": "lv_home_snapshot",
+          "lv_full_ancestors": "",
+          "lv_full_descendants": "lv_home_snapshot"
+        },
+        {
+          "lv_uuid": "Il5cUA-BDjk-T5ZB-vTdr-EsJd-6bFa-zjuhgB",
+          "lv_name": "lv_root",
+          "lv_ancestors": "",
+          "lv_descendants": "",
+          "lv_full_ancestors": "",
+          "lv_full_descendants": ""
+        },
+        {
+          "lv_uuid": "FNkhIS-Vozm-bmE7-dmHD-vjOM-103g-irxDIb",
+          "lv_name": "lv_docker",
+          "lv_ancestors": "",
+          "lv_descendants": "",
+          "lv_full_ancestors": "",
+          "lv_full_descendants": ""
+        },
+        {
+          "lv_uuid": "PucjXb-iwvM-Px3b-tfO8-xy43-F8B4-2uEyc0",
+          "lv_name": "lv_libvirt_images",
+          "lv_ancestors": "",
+          "lv_descendants": "",
+          "lv_full_ancestors": "",
+          "lv_full_descendants": ""
+        },
+        {
+          "lv_uuid": "VBJ3Ct-yDJ3-JPGS-Zyew-tCO5-7AvK-INt3g6",
+          "lv_name": "lv_csmeta",
+          "lv_ancestors": "",
+          "lv_descendants": "",
+          "lv_full_ancestors": "",
+          "lv_full_descendants": ""
+        },
+        {
+          "lv_uuid": "zqJxaj-K6iF-f1NV-4G35-8Pg7-hhpn-p77SMP",
+          "lv_name": "lv_home_snapshot",
+          "lv_ancestors": "lv_home",
+          "lv_descendants": "",
+          "lv_full_ancestors": "lv_home",
+          "lv_full_descendants": ""
+        }
+      ],
+      "pvseg": [
+        {
+          "pv_uuid": "DobPwo-HVJ3-hjKh-m4q7-y4e6-bmHi-2avBcN",
+          "lv_uuid": "FNkhIS-Vozm-bmE7-dmHD-vjOM-103g-irxDIb"
+        },
+        {
+          "pv_uuid": "DobPwo-HVJ3-hjKh-m4q7-y4e6-bmHi-2avBcN",
+          "lv_uuid": "PucjXb-iwvM-Px3b-tfO8-xy43-F8B4-2uEyc0"
+        },
+        {
+          "pv_uuid": "DobPwo-HVJ3-hjKh-m4q7-y4e6-bmHi-2avBcN",
+          "lv_uuid": "b3Wegf-3TOd-I5YS-ll0X-RZgI-QxAu-qv0fbc"
+        },
+        {
+          "pv_uuid": "DobPwo-HVJ3-hjKh-m4q7-y4e6-bmHi-2avBcN",
+          "lv_uuid": "Il5cUA-BDjk-T5ZB-vTdr-EsJd-6bFa-zjuhgB"
+        },
+        {
+          "pv_uuid": "DobPwo-HVJ3-hjKh-m4q7-y4e6-bmHi-2avBcN",
+          "lv_uuid": "FNkhIS-Vozm-bmE7-dmHD-vjOM-103g-irxDIb"
+        },
+        {
+          "pv_uuid": "DobPwo-HVJ3-hjKh-m4q7-y4e6-bmHi-2avBcN",
+          "lv_uuid": "zqJxaj-K6iF-f1NV-4G35-8Pg7-hhpn-p77SMP"
+        },
+        {
+          "pv_uuid": "DobPwo-HVJ3-hjKh-m4q7-y4e6-bmHi-2avBcN",
+          "lv_uuid": ""
+        },
+        {
+          "pv_uuid": "DobPwo-HVJ3-hjKh-m4q7-y4e6-bmHi-2avBcN",
+          "lv_uuid": "PucjXb-iwvM-Px3b-tfO8-xy43-F8B4-2uEyc0"
+        },
+        {
+          "pv_uuid": "DobPwo-HVJ3-hjKh-m4q7-y4e6-bmHi-2avBcN",
+          "lv_uuid": "VBJ3Ct-yDJ3-JPGS-Zyew-tCO5-7AvK-INt3g6"
+        },
+        {
+          "pv_uuid": "DobPwo-HVJ3-hjKh-m4q7-y4e6-bmHi-2avBcN",
+          "lv_uuid": ""
+        },
+        {
+          "pv_uuid": "DobPwo-HVJ3-hjKh-m4q7-y4e6-bmHi-2avBcN",
+          "lv_uuid": "b3Wegf-3TOd-I5YS-ll0X-RZgI-QxAu-qv0fbc"
+        },
+        {
+          "pv_uuid": "DobPwo-HVJ3-hjKh-m4q7-y4e6-bmHi-2avBcN",
+          "lv_uuid": ""
+        },
+        {
+          "pv_uuid": "DobPwo-HVJ3-hjKh-m4q7-y4e6-bmHi-2avBcN",
+          "lv_uuid": "b3Wegf-3TOd-I5YS-ll0X-RZgI-QxAu-qv0fbc"
+        },
+        {
+          "pv_uuid": "DobPwo-HVJ3-hjKh-m4q7-y4e6-bmHi-2avBcN",
+          "lv_uuid": "PucjXb-iwvM-Px3b-tfO8-xy43-F8B4-2uEyc0"
+        }
+      ],
+      "seg": [
+        {
+          "lv_uuid": "b3Wegf-3TOd-I5YS-ll0X-RZgI-QxAu-qv0fbc"
+        },
+        {
+          "lv_uuid": "b3Wegf-3TOd-I5YS-ll0X-RZgI-QxAu-qv0fbc"
+        },
+        {
+          "lv_uuid": "b3Wegf-3TOd-I5YS-ll0X-RZgI-QxAu-qv0fbc"
+        },
+        {
+          "lv_uuid": "Il5cUA-BDjk-T5ZB-vTdr-EsJd-6bFa-zjuhgB"
+        },
+        {
+          "lv_uuid": "FNkhIS-Vozm-bmE7-dmHD-vjOM-103g-irxDIb"
+        },
+        {
+          "lv_uuid": "FNkhIS-Vozm-bmE7-dmHD-vjOM-103g-irxDIb"
+        },
+        {
+          "lv_uuid": "PucjXb-iwvM-Px3b-tfO8-xy43-F8B4-2uEyc0"
+        },
+        {
+          "lv_uuid": "PucjXb-iwvM-Px3b-tfO8-xy43-F8B4-2uEyc0"
+        },
+        {
+          "lv_uuid": "PucjXb-iwvM-Px3b-tfO8-xy43-F8B4-2uEyc0"
+        },
+        {
+          "lv_uuid": "VBJ3Ct-yDJ3-JPGS-Zyew-tCO5-7AvK-INt3g6"
+        },
+        {
+          "lv_uuid": "zqJxaj-K6iF-f1NV-4G35-8Pg7-hhpn-p77SMP"
+        }
+      ]
+    }
+  ]
+}
