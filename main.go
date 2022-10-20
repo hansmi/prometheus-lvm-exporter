@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"log"
 	"net/http"
@@ -11,6 +10,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/prometheus/common/version"
 	"github.com/prometheus/exporter-toolkit/web"
+	"gopkg.in/alecthomas/kingpin.v2"
 
 	kitlog "github.com/go-kit/kit/log"
 )
@@ -18,14 +18,14 @@ import (
 const metricPrefix = "lvm_"
 
 func main() {
-	showVersion := flag.Bool("version", false, "Output version information and exit")
-	listenAddress := flag.String("web.listen-address", ":9845", "The address to listen on for HTTP requests")
-	configFile := flag.String("web.config", "", "Path to config yaml file that can enable TLS or authentication")
-	metricsPath := flag.String("web.telemetry-path", "/metrics", "Path under which to expose metrics")
-	disableExporterMetrics := flag.Bool("web.disable-exporter-metrics", false, "Exclude metrics about the exporter itself")
-	cmd := flag.String("command", "/usr/sbin/lvm", "Path to the LVM binary")
+	showVersion := kingpin.Flag("version", "Output version information and exit").Bool()
+	listenAddress := kingpin.Flag("web.listen-address", "The address to listen on for HTTP requests").Default(":9845").String()
+	configFile := kingpin.Flag("web.config", "Path to config yaml file that can enable TLS or authentication").String()
+	metricsPath := kingpin.Flag("web.telemetry-path", "Path under which to expose metrics").Default("/metrics").String()
+	disableExporterMetrics := kingpin.Flag("web.disable-exporter-metrics", "Exclude metrics about the exporter itself").Bool()
+	cmd := kingpin.Flag("command", "Path to the LVM binary").Default("/usr/sbin/lvm").String()
 
-	flag.Parse()
+	kingpin.Parse()
 
 	if *showVersion {
 		fmt.Println(version.Print("prometheus-lvm-exporter"))
