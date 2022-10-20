@@ -13,14 +13,14 @@ import (
 	"gopkg.in/alecthomas/kingpin.v2"
 
 	kitlog "github.com/go-kit/kit/log"
+	webflag "github.com/prometheus/exporter-toolkit/web/kingpinflag"
 )
 
 const metricPrefix = "lvm_"
 
 func main() {
 	showVersion := kingpin.Flag("version", "Output version information and exit").Bool()
-	listenAddress := kingpin.Flag("web.listen-address", "The address to listen on for HTTP requests").Default(":9845").String()
-	configFile := kingpin.Flag("web.config", "Path to config yaml file that can enable TLS or authentication").String()
+	webConfig := webflag.AddFlags(kingpin.CommandLine, ":9845")
 	metricsPath := kingpin.Flag("web.telemetry-path", "Path under which to expose metrics").Default("/metrics").String()
 	disableExporterMetrics := kingpin.Flag("web.disable-exporter-metrics", "Exclude metrics about the exporter itself").Bool()
 	cmd := kingpin.Flag("command", "Path to the LVM binary").Default("/usr/sbin/lvm").String()
@@ -64,12 +64,10 @@ func main() {
 			</html>`))
 	})
 
-	log.Printf("Listening on %q", *listenAddress)
-
-	server := &http.Server{Addr: *listenAddress}
+	server := &http.Server{}
 	logger := kitlog.NewLogfmtLogger(kitlog.StdlibWriter{})
 
-	if err := web.ListenAndServe(server, *configFile, logger); err != nil {
+	if err := web.ListenAndServe(server, webConfig, logger); err != nil {
 		log.Fatal(err)
 	}
 }
