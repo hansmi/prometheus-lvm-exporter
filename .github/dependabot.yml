@@ -6,4 +6,9 @@ updates:
     schedule:
       interval: weekly
 
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+
 # vim: set sw=2 sts=2 et :
