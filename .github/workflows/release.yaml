@@ -37,7 +37,7 @@ jobs:
           else
             args=( --skip-publish )
           fi
-          echo "::set-output name=goreleaser_args::${args[*]}"
+          echo "goreleaser_args=${args[*]}" >> $GITHUB_OUTPUT
 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v3
