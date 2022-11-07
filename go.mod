@@ -6,7 +6,7 @@ require (
 	github.com/go-kit/kit v0.12.0
 	github.com/google/go-cmp v0.5.9
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
-	github.com/prometheus/client_golang v1.13.0
+	github.com/prometheus/client_golang v1.13.1
 	github.com/prometheus/common v0.37.0
 	github.com/prometheus/exporter-toolkit v0.8.1
 	github.com/sebdah/goldie/v2 v2.5.3
