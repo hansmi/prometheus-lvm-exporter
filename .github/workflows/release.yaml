@@ -1,58 +1,17 @@
-name: Release packaging
+name: Release
 
 on:
   workflow_dispatch:
+  pull_request:
   push:
-    branches:
-      - main
-    tags:
-      - 'v[0-9]+.*'
 
-permissions:
-  contents: write
+permissions: {}
 
 jobs:
   release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          # Required by GoReleaser
-          fetch-depth: 0
+    uses: hansmi/ghactions-goreleaser-workflow/.github/workflows/release.yaml@stable
+    permissions:
+      contents: write
+      packages: write
 
-      - name: Go setup
-        uses: actions/setup-go@v3
-        with:
-          go-version: 1
-
-      - name: Set variables
-        id: vars
-        env:
-          EVENT_NAME: ${{ github.event_name }}
-          REF: ${{ github.ref }}
-        run: |
-          if [[ "$EVENT_NAME" = push && "$REF" = refs/tags/v[0-9]*.* ]]; then
-            args=()
-          else
-            args=( --skip-publish )
-          fi
-          echo "goreleaser_args=${args[*]}" >> $GITHUB_OUTPUT
-
-      - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v3
-        with:
-          distribution: goreleaser
-          version: latest
-          args: release --rm-dist ${{ steps.vars.outputs.goreleaser_args }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload assets
-        uses: actions/upload-artifact@v3
-        with:
-          name: prometheus-lvm-exporter-${{ hashFiles('dist/**') }}
-          path: dist/**
-          if-no-files-found: error
-
-# vim: set sw=2 sts=2 et : -->
+# vim: set sw=2 sts=2 et :
