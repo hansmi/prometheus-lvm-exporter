@@ -12,7 +12,7 @@ import (
 	"github.com/prometheus/exporter-toolkit/web"
 	"gopkg.in/alecthomas/kingpin.v2"
 
-	kitlog "github.com/go-kit/kit/log"
+	kitlog "github.com/go-kit/log"
 	webflag "github.com/prometheus/exporter-toolkit/web/kingpinflag"
 )
 
