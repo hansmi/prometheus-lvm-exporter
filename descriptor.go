@@ -1,7 +1,7 @@
 package main
 
 type descriptor struct {
-	noCopy noCopy
+	_ noCopy
 
 	fieldName string
 
