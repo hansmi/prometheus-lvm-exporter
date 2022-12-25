@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"testing"
 
@@ -20,7 +20,7 @@ func disableLogOutput(t *testing.T) {
 
 	previous := log.Writer()
 
-	log.SetOutput(ioutil.Discard)
+	log.SetOutput(io.Discard)
 
 	t.Cleanup(func() {
 		log.SetOutput(previous)
