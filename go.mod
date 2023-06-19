@@ -7,7 +7,7 @@ require (
 	github.com/go-kit/log v0.2.1
 	github.com/google/go-cmp v0.5.9
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
-	github.com/prometheus/client_golang v1.15.1
+	github.com/prometheus/client_golang v1.16.0
 	github.com/prometheus/common v0.44.0
 	github.com/prometheus/exporter-toolkit v0.10.0
 	github.com/sebdah/goldie/v2 v2.5.3
@@ -28,7 +28,7 @@ require (
 	github.com/mwitkow/go-conntrack v0.0.0-20190716064945-2f068394615f // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/prometheus/client_model v0.4.0 // indirect
-	github.com/prometheus/procfs v0.9.0 // indirect
+	github.com/prometheus/procfs v0.10.1 // indirect
 	github.com/sergi/go-diff v1.2.0 // indirect
 	github.com/xhit/go-str2duration/v2 v2.1.0 // indirect
 	golang.org/x/crypto v0.8.0 // indirect
