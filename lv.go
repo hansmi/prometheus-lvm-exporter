@@ -220,6 +220,16 @@ var lvGroup = &group{
 			desc:       "The integrity mode",
 		},
 		{
+			fieldName:  "vdo_compression_state",
+			metricName: "lv_vdo_compression_state",
+			desc:       "For vdo pools, whether compression is running",
+		},
+		{
+			fieldName:  "vdo_index_state",
+			metricName: "lv_vdo_index_state",
+			desc:       "For vdo pools, state of index for deduplication",
+		},
+		{
 			fieldName:  "vdo_operating_mode",
 			metricName: "lv_vdo_operating_mode",
 			desc:       "For vdo pools, its current operating mode",
@@ -477,16 +487,6 @@ var lvGroup = &group{
 			fieldName:  "sync_percent",
 			metricName: "lv_sync_percent",
 			desc:       "For Cache, RAID, mirrors and pvmove, current percentage in-sync",
-		},
-		{
-			fieldName:  "vdo_compression_state",
-			metricName: "lv_vdo_compression_state",
-			desc:       "For vdo pools, whether compression is running",
-		},
-		{
-			fieldName:  "vdo_index_state",
-			metricName: "lv_vdo_index_state",
-			desc:       "For vdo pools, state of index for deduplication",
 		},
 		{
 			fieldName:  "vdo_saving_percent",

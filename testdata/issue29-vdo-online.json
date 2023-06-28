@@ -1,0 +1,62 @@
+{
+  "report": [
+    {
+      "lv": [
+        {
+          "lv_uuid": "dylifl-81AF-n2mG-kFKo-Ntxe-mnNQ-3eB7fF",
+          "lv_name": "vpool0",
+          "vdo_compression_state": "online",
+          "vdo_index_state": "online",
+          "vdo_operating_mode": "normal",
+          "vdo_saving_percent": "55.37",
+          "vdo_used_size": "2788999639040"
+        },
+        {
+          "lv_uuid": "r7Btja-nL3P-Co38-X2K4-DLWS-LMhT-LajcQa",
+          "lv_name": "lv_db_backup",
+          "vdo_compression_state": "online",
+          "vdo_index_state": "online",
+          "vdo_operating_mode": "normal",
+          "vdo_saving_percent": "55.37",
+          "vdo_used_size": "2788999639040"
+        },
+        {
+          "lv_uuid": "tHnHR1-bjg8-ycJX-eyhR-heEp-L4qs-S510dO",
+          "lv_name": "[vpool0_vdata]",
+          "vdo_compression_state": "",
+          "vdo_index_state": "",
+          "vdo_operating_mode": "",
+          "vdo_saving_percent": "",
+          "vdo_used_size": ""
+        },
+        {
+          "lv_uuid": "5UyOrx-zG6u-w7cF-G2Ny-HmVd-0lsb-4J6lG2",
+          "lv_name": "lv_data",
+          "vdo_compression_state": "",
+          "vdo_index_state": "",
+          "vdo_operating_mode": "",
+          "vdo_saving_percent": "",
+          "vdo_used_size": ""
+        },
+        {
+          "lv_uuid": "lGs7Tn-1Fyv-jMHN-aniN-r8qk-duEI-B9Xl9e",
+          "lv_name": "swap",
+          "vdo_compression_state": "",
+          "vdo_index_state": "",
+          "vdo_operating_mode": "",
+          "vdo_saving_percent": "",
+          "vdo_used_size": ""
+        },
+        {
+          "lv_uuid": "cqZnVQ-FUPG-btWz-3fff-cMX5-wViK-8MM3QY",
+          "lv_name": "root",
+          "vdo_compression_state": "",
+          "vdo_index_state": "",
+          "vdo_operating_mode": "",
+          "vdo_saving_percent": "",
+          "vdo_used_size": ""
+        }
+      ]
+    }
+  ]
+}
