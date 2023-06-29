@@ -69,6 +69,7 @@ func TestCollector(t *testing.T) {
 		{name: "mirrored-unhealthy"},
 		{name: "snapshot"},
 		{name: "issue29-vdo-online"},
+		{name: "issue30-lockargs"},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
 			c := newCollector()

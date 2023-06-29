@@ -1,0 +1,23 @@
+{
+  "report": [
+    {
+      "lv": [
+        {
+          "lv_uuid": "YvnAc9-CH9k-Fq5F-WfTl-oONA-5njZ-t1ChZm",
+          "lv_name": "alpinetest",
+          "lv_lockargs": "1.0.0:570425344"
+        },
+        {
+          "lv_uuid": "FmOsEf-s4PL-qNOn-KSLb-GAIG-kuuP-ErGbTp",
+          "lv_name": "lvtest",
+          "lv_lockargs": "1.0.0:620756992"
+        },
+        {
+          "lv_uuid": "PN2YZw-aWgL-O0Rc-Vkbx-Dx09-lvDp-fhpbXe",
+          "lv_name": "[lvmlock]",
+          "lv_lockargs": ""
+        }
+      ]
+    }
+  ]
+}

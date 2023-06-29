@@ -120,6 +120,11 @@ var lvGroup = &group{
 			desc:       "LV layout",
 		},
 		{
+			fieldName:  "lv_lockargs",
+			metricName: "lv_lockargs",
+			desc:       "Lock args of the LV used by lvmlockd",
+		},
+		{
 			fieldName:  "lv_modules",
 			metricName: "lv_modules",
 			desc:       "Kernel device-mapper modules required for this LV",
@@ -360,11 +365,6 @@ var lvGroup = &group{
 			fieldName:  "lv_live_table",
 			metricName: "lv_live_table",
 			desc:       "Set if LV has live table present",
-		},
-		{
-			fieldName:  "lv_lockargs",
-			metricName: "lv_lockargs",
-			desc:       "Lock args of the LV used by lvmlockd",
 		},
 		{
 			fieldName:  "lv_major",
