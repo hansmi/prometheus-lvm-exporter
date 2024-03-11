@@ -9,6 +9,7 @@ import (
 	"github.com/kballard/go-shellquote"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/collectors"
+	versioncollector "github.com/prometheus/client_golang/prometheus/collectors/version"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/prometheus/common/version"
 	"github.com/prometheus/exporter-toolkit/web"
@@ -48,7 +49,7 @@ func main() {
 			collectors.NewBuildInfoCollector(),
 			collectors.NewProcessCollector(collectors.ProcessCollectorOpts{}),
 			collectors.NewGoCollector(),
-			version.NewCollector("lvm_exporter"),
+			versioncollector.NewCollector("lvm_exporter"),
 		)
 	}
 
