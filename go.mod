@@ -10,7 +10,7 @@ require (
 	github.com/google/go-cmp v0.6.0
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
 	github.com/prometheus/client_golang v1.19.0
-	github.com/prometheus/common v0.50.0
+	github.com/prometheus/common v0.51.1
 	github.com/prometheus/exporter-toolkit v0.11.0
 	github.com/sebdah/goldie/v2 v2.5.3
 	golang.org/x/sync v0.6.0
