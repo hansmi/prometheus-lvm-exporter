@@ -1,6 +1,8 @@
 # Configuration for GoReleaser
 # https://goreleaser.com/
 
+version: 2
+
 project_name: prometheus-lvm-exporter
 
 builds:
