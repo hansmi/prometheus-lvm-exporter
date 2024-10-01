@@ -1,8 +1,8 @@
 module github.com/hansmi/prometheus-lvm-exporter
 
-go 1.21
+go 1.22
 
-toolchain go1.21.5
+toolchain go1.22.7
 
 require (
 	github.com/alecthomas/kingpin/v2 v2.4.0
@@ -11,7 +11,7 @@ require (
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
 	github.com/prometheus/client_golang v1.20.4
 	github.com/prometheus/common v0.60.0
-	github.com/prometheus/exporter-toolkit v0.11.0
+	github.com/prometheus/exporter-toolkit v0.13.0
 	github.com/sebdah/goldie/v2 v2.5.5
 	golang.org/x/sync v0.8.0
 )
@@ -25,6 +25,8 @@ require (
 	github.com/jpillora/backoff v1.0.0 // indirect
 	github.com/klauspost/compress v1.17.9 // indirect
 	github.com/kylelemons/godebug v1.1.0 // indirect
+	github.com/mdlayher/socket v0.4.1 // indirect
+	github.com/mdlayher/vsock v1.2.1 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/mwitkow/go-conntrack v0.0.0-20190716064945-2f068394615f // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
