@@ -11,10 +11,10 @@ import (
 	"github.com/prometheus/client_golang/prometheus/collectors"
 	versioncollector "github.com/prometheus/client_golang/prometheus/collectors/version"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/prometheus/common/promslog"
+	promslogflag "github.com/prometheus/common/promslog/flag"
 	"github.com/prometheus/common/version"
 	"github.com/prometheus/exporter-toolkit/web"
-
-	kitlog "github.com/go-kit/log"
 	webflag "github.com/prometheus/exporter-toolkit/web/kingpinflag"
 )
 
@@ -26,6 +26,9 @@ func main() {
 	metricsPath := kingpin.Flag("web.telemetry-path", "Path under which to expose metrics").Default("/metrics").String()
 	disableExporterMetrics := kingpin.Flag("web.disable-exporter-metrics", "Exclude metrics about the exporter itself").Bool()
 	cmd := kingpin.Flag("command", "Path to the LVM binary").Default("/usr/sbin/lvm").String()
+
+	promslogConfig := &promslog.Config{}
+	promslogflag.AddFlags(kingpin.CommandLine, promslogConfig)
 
 	kingpin.Parse()
 
@@ -67,7 +70,7 @@ func main() {
 	})
 
 	server := &http.Server{}
-	logger := kitlog.NewLogfmtLogger(kitlog.StdlibWriter{})
+	logger := promslog.New(promslogConfig)
 
 	if err := web.ListenAndServe(server, webConfig, logger); err != nil {
 		log.Fatal(err)
