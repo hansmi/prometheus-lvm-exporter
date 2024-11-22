@@ -3,8 +3,6 @@ package main
 import "github.com/hansmi/prometheus-lvm-exporter/lvmreport"
 
 type group struct {
-	_ noCopy
-
 	name lvmreport.GroupName
 
 	infoMetricName string
