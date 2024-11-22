@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"slices"
 	"sort"
 	"strings"
 
@@ -144,8 +145,8 @@ func (c *groupCollector) collect(ch chan<- prometheus.Metric, data *lvmreport.Re
 		return nil
 	}
 
-	sort.Slice(allErrors, func(a, b int) bool {
-		return allErrors[a].Error() < allErrors[b].Error()
+	slices.SortFunc(allErrors, func(a, b error) int {
+		return strings.Compare(a.Error(), b.Error())
 	})
 
 	return allErrors

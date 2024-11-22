@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"regexp"
-	"sort"
+	"slices"
 	"strings"
 	"testing"
 
@@ -84,8 +84,8 @@ func checkReportFields(t *testing.T, g *group, fields []*descriptor) {
 
 	sortedFields := append([]*descriptor(nil), fields...)
 
-	sort.Slice(sortedFields, func(a, b int) bool {
-		return sortedFields[a].fieldName < sortedFields[b].fieldName
+	slices.SortFunc(sortedFields, func(a, b *descriptor) int {
+		return strings.Compare(a.fieldName, b.fieldName)
 	})
 
 	if diff := cmp.Diff(fields, sortedFields, cmp.AllowUnexported(descriptor{}), cmpopts.IgnoreTypes(metricValueFunc(nil))); diff != "" {
