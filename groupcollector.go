@@ -59,7 +59,7 @@ func newGroupCollector(g *group) *groupCollector {
 		keyLabelNames = append(keyLabelNames, d.metricName)
 	}
 
-	infoLabelNames := append([]string(nil), keyLabelNames...)
+	infoLabelNames := slices.Clone(keyLabelNames)
 
 	for _, d := range g.infoFields {
 		c.infoFields = append(c.infoFields, d.fieldName)
@@ -103,7 +103,7 @@ func (c *groupCollector) collect(ch chan<- prometheus.Metric, data *lvmreport.Re
 			keyValues = append(keyValues, row[name])
 		}
 
-		infoValues := append([]string(nil), keyValues...)
+		infoValues := slices.Clone(keyValues)
 
 		for _, name := range c.infoFields {
 			infoValues = append(infoValues, row[name])

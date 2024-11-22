@@ -1,6 +1,10 @@
 package main
 
-import "github.com/hansmi/prometheus-lvm-exporter/lvmreport"
+import (
+	"slices"
+
+	"github.com/hansmi/prometheus-lvm-exporter/lvmreport"
+)
 
 type group struct {
 	name lvmreport.GroupName
@@ -13,7 +17,7 @@ type group struct {
 }
 
 func (r *group) allDescriptors() []*descriptor {
-	d := append([]*descriptor(nil), r.keyFields...)
+	d := slices.Clone(r.keyFields)
 	d = append(d, r.infoFields...)
 	d = append(d, r.metricFields...)
 	return d

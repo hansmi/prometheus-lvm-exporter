@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"slices"
 	"strings"
 
 	"github.com/kballard/go-shellquote"
@@ -32,7 +33,7 @@ func NewCommand(args []string) *Command {
 }
 
 func (c *Command) completeArgs() []string {
-	args := append([]string(nil), c.args...)
+	args := slices.Clone(c.args)
 
 	args = append(args,
 		"fullreport",

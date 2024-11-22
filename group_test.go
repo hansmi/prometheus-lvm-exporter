@@ -82,7 +82,7 @@ func checkSingleDescriptor(t *testing.T, g *group, d *descriptor) {
 func checkReportFields(t *testing.T, g *group, fields []*descriptor) {
 	t.Helper()
 
-	sortedFields := append([]*descriptor(nil), fields...)
+	sortedFields := slices.Clone(fields)
 
 	slices.SortFunc(sortedFields, func(a, b *descriptor) int {
 		return strings.Compare(a.fieldName, b.fieldName)
