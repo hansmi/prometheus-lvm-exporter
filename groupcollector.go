@@ -8,6 +8,7 @@ import (
 
 	"github.com/hansmi/prometheus-lvm-exporter/lvmreport"
 	"github.com/prometheus/client_golang/prometheus"
+	"golang.org/x/exp/maps"
 )
 
 type groupField struct {
@@ -131,11 +132,7 @@ func (c *groupCollector) collect(ch chan<- prometheus.Metric, data *lvmreport.Re
 		}
 	}
 
-	var details []string
-
-	for i := range unknown {
-		details = append(details, i)
-	}
+	details := maps.Keys(unknown)
 
 	sort.Strings(details)
 
