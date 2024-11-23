@@ -11,8 +11,13 @@ type group struct {
 
 	infoMetricName string
 
+	// Fields applied to all metrics from the group.
 	keyFields    []*descriptor
+
+	// Non-numeric fields, e.g. a device path.
 	infoFields   []*descriptor
+
+	// Numeric fields, either directly or after conversion.
 	metricFields []*descriptor
 }
 
