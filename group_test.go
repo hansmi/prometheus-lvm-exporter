@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"regexp"
 	"slices"
+	"sort"
 	"strings"
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/google/go-cmp/cmp/cmpopts"
 )
 
 var spaceRe = regexp.MustCompile(`\s+`)
@@ -22,122 +22,75 @@ func checkLowerSnake(t *testing.T, name, value string) {
 	}
 }
 
-func TestGroupFieldNames(t *testing.T) {
-	for _, tc := range []struct {
-		name  string
-		input *group
-		want  []string
-	}{
-		{
-			name:  "empty",
-			input: &group{},
-		},
-		{
-			name: "one each",
-			input: &group{
-				keyFields: []*descriptor{
-					{fieldName: "keyField"},
-				},
-				infoFields: []*descriptor{
-					{fieldName: "infoField"},
-				},
-				metricFields: []*descriptor{
-					{fieldName: "metricField"},
-				},
-			},
-			want: []string{"keyField", "infoField", "metricField"},
-		},
-	} {
-		t.Run(tc.name, func(t *testing.T) {
-			got := tc.input.fieldNames()
+func checkSingleField(t *testing.T, g *group, f field) {
+	t.Helper()
 
-			if diff := cmp.Diff(got, tc.want, cmpopts.EquateEmpty()); diff != "" {
-				t.Errorf("fieldNames() difference (-got +want):\n%s", diff)
-			}
+	checkLowerSnake(t, "Name", f.Name())
+	checkLowerSnake(t, "MetricName", f.MetricName())
+
+	if wantPrefix := fmt.Sprintf("%s_", g.name); !strings.HasPrefix(f.MetricName(), wantPrefix) {
+		t.Errorf("Metric name %q must start with %q", f.MetricName(), wantPrefix)
+	} else if strings.HasPrefix(f.MetricName(), wantPrefix+wantPrefix) {
+		t.Errorf("Metric name %q has double %q prefix", f.MetricName(), wantPrefix)
+	}
+
+	wantHelp := spaceRe.ReplaceAllLiteralString(f.Help(), " ")
+	wantHelp = strings.TrimSpace(wantHelp)
+	wantHelp = strings.TrimSuffix(wantHelp, ".")
+
+	if diff := cmp.Diff(f.Help(), wantHelp); diff != "" {
+		t.Errorf("Help text not normalized (-got +want):\n%s", diff)
+	}
+}
+
+func checkGroupFields[T field](t *testing.T, g *group, add func(*testing.T, field), fields []T) {
+	t.Helper()
+
+	var names []string
+
+	for idx, f := range fields {
+		names = append(names, f.Name())
+
+		t.Run(fmt.Sprintf("%d:%s", idx, f.Name()), func(t *testing.T) {
+			add(t, f)
+			checkSingleField(t, g, f)
 		})
 	}
-}
 
-func checkSingleDescriptor(t *testing.T, g *group, d *descriptor) {
-	t.Helper()
+	sortedNames := slices.Clone(names)
 
-	checkLowerSnake(t, "fieldName", d.fieldName)
-	checkLowerSnake(t, "metricName", d.metricName)
+	sort.Strings(sortedNames)
 
-	if wantPrefix := fmt.Sprintf("%s_", g.name); !strings.HasPrefix(d.metricName, wantPrefix) {
-		t.Errorf("metricName %q must start with %q", d.metricName, wantPrefix)
-	} else if strings.HasPrefix(d.metricName, wantPrefix+wantPrefix) {
-		t.Errorf("metricName %q has double %q prefix", d.metricName, wantPrefix)
-	}
-
-	wantDesc := spaceRe.ReplaceAllLiteralString(d.desc, " ")
-	wantDesc = strings.TrimSpace(wantDesc)
-	wantDesc = strings.TrimSuffix(wantDesc, ".")
-
-	if diff := cmp.Diff(d.desc, wantDesc); diff != "" {
-		t.Errorf("Description not normalized (-got +want):\n%s", diff)
+	if diff := cmp.Diff(names, sortedNames); diff != "" {
+		t.Errorf("Fields not sorted (-got +want):\n%s", diff)
 	}
 }
 
-func checkReportFields(t *testing.T, g *group, fields []*descriptor) {
+func checkGroup(t *testing.T, g *group) {
 	t.Helper()
 
-	sortedFields := slices.Clone(fields)
-
-	slices.SortFunc(sortedFields, func(a, b *descriptor) int {
-		return strings.Compare(a.fieldName, b.fieldName)
-	})
-
-	if diff := cmp.Diff(fields, sortedFields, cmp.AllowUnexported(descriptor{}), cmpopts.IgnoreTypes(metricValueFunc(nil))); diff != "" {
-		t.Errorf("descriptors not sorted (-got +want):\n%s", diff)
-	}
-
-	for idx, d := range fields {
-		t.Run(fmt.Sprintf("%d:%s", idx, d.fieldName), func(t *testing.T) {
-			checkSingleDescriptor(t, g, d)
-		})
-	}
-}
-
-func checkReportDescriptors(t *testing.T, g *group) {
-	t.Helper()
-
-	fieldNames := []string{}
 	fieldNameMap := map[string]struct{}{}
 	metricNameMap := map[string]struct{}{}
 
-	for _, tc := range []struct {
-		name   string
-		fields []*descriptor
-	}{
-		{"key", g.keyFields},
-		{"info", g.infoFields},
-		{"metric", g.metricFields},
-	} {
-		t.Run(tc.name, func(t *testing.T) {
-			checkReportFields(t, g, tc.fields)
-		})
+	checkLowerSnake(t, "infoMetricName", g.infoMetricName)
+	metricNameMap[g.infoMetricName] = struct{}{}
 
-		for _, d := range tc.fields {
-			if _, ok := fieldNameMap[d.fieldName]; ok {
-				t.Errorf("Duplicate field name %q", d.fieldName)
-			}
-
-			if _, ok := metricNameMap[d.metricName]; ok {
-				t.Errorf("Duplicate metric name %q", d.metricName)
-			}
-
-			fieldNames = append(fieldNames, d.fieldName)
-			fieldNameMap[d.fieldName] = struct{}{}
-			metricNameMap[d.metricName] = struct{}{}
+	process := func(t *testing.T, f field) {
+		if _, ok := fieldNameMap[f.Name()]; ok {
+			t.Errorf("Duplicate field name %q", f.Name())
 		}
+
+		if _, ok := metricNameMap[f.MetricName()]; ok {
+			t.Errorf("Duplicate metric name %q", f.MetricName())
+		}
+
+		fieldNameMap[f.Name()] = struct{}{}
+		metricNameMap[f.MetricName()] = struct{}{}
 	}
 
-	if diff := cmp.Diff(g.fieldNames(), fieldNames, cmpopts.SortSlices(func(a, b string) bool {
-		return a < b
-	})); diff != "" {
-		t.Errorf("fieldNames() difference (-got +want):\n%s", diff)
-	}
+	checkGroupFields(t, g, process, g.keyFields)
+	checkGroupFields(t, g, process, g.textFields)
+	checkGroupFields(t, g, process, g.numericFields)
 }
 
 func TestGroupValidation(t *testing.T) {
@@ -146,11 +99,10 @@ func TestGroupValidation(t *testing.T) {
 	for _, g := range allGroups {
 		t.Run(g.name.String(), func(t *testing.T) {
 			if !kindRe.MatchString(g.name.String()) {
-				t.Errorf("report kind is %q, want match for %q", g.name.String(), kindRe.String())
+				t.Errorf("Group kind is %q, want match for %q", g.name.String(), kindRe.String())
 			}
 
-			checkLowerSnake(t, "infoMetricName", g.infoMetricName)
-			checkReportDescriptors(t, g)
+			checkGroup(t, g)
 		})
 	}
 }

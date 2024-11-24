@@ -12,12 +12,12 @@ import (
 )
 
 type groupField struct {
-	fieldDesc  *descriptor
-	metricDesc *prometheus.Desc
+	metricValue metricValueFunc
+	metricDesc  *prometheus.Desc
 }
 
 func (f *groupField) collect(ch chan<- prometheus.Metric, rawValue string, keyValues []string) error {
-	fn := f.fieldDesc.metricValue
+	fn := f.metricValue
 
 	if fn == nil {
 		fn = fromNumeric
@@ -39,45 +39,44 @@ type groupCollector struct {
 	infoDesc    *prometheus.Desc
 	unknownDesc *prometheus.Desc
 
-	keyFields    []string
-	infoFields   []string
-	metricFields map[string]*groupField
-	knownFields  map[string]struct{}
+	keyFields     []string
+	textFields    []string
+	numericFields map[string]*groupField
+	knownFields   map[string]struct{}
 }
 
 func newGroupCollector(g *group) *groupCollector {
 	c := &groupCollector{
-		name:         g.name,
-		unknownDesc:  prometheus.NewDesc("unknown_field_count", "Fields reported by LVM not recognized by exporter", []string{"group", "details"}, nil),
-		metricFields: map[string]*groupField{},
-		knownFields:  map[string]struct{}{},
+		name:          g.name,
+		unknownDesc:   prometheus.NewDesc("unknown_field_count", "Fields reported by LVM not recognized by exporter", []string{"group", "details"}, nil),
+		numericFields: map[string]*groupField{},
+		knownFields:   map[string]struct{}{},
 	}
 
 	var keyLabelNames []string
 
-	for _, d := range g.keyFields {
-		c.keyFields = append(c.keyFields, d.fieldName)
-		keyLabelNames = append(keyLabelNames, d.metricName)
+	for _, f := range g.keyFields {
+		c.keyFields = append(c.keyFields, f.fieldName)
+		c.knownFields[f.fieldName] = struct{}{}
+		keyLabelNames = append(keyLabelNames, f.metricName)
 	}
 
 	infoLabelNames := slices.Clone(keyLabelNames)
 
-	for _, d := range g.infoFields {
-		c.infoFields = append(c.infoFields, d.fieldName)
-		infoLabelNames = append(infoLabelNames, d.metricName)
+	for _, f := range g.textFields {
+		c.textFields = append(c.textFields, f.fieldName)
+		c.knownFields[f.fieldName] = struct{}{}
+		infoLabelNames = append(infoLabelNames, f.metricName)
 	}
 
 	c.infoDesc = prometheus.NewDesc(g.infoMetricName, "", infoLabelNames, nil)
 
-	for _, d := range g.metricFields {
-		c.metricFields[d.fieldName] = &groupField{
-			fieldDesc:  d,
-			metricDesc: prometheus.NewDesc(d.metricName, d.desc, keyLabelNames, nil),
+	for _, f := range g.numericFields {
+		c.numericFields[f.fieldName] = &groupField{
+			metricValue: f.metricValue,
+			metricDesc:  prometheus.NewDesc(f.metricName, f.desc, keyLabelNames, nil),
 		}
-	}
-
-	for _, i := range g.fieldNames() {
-		c.knownFields[i] = struct{}{}
+		c.knownFields[f.fieldName] = struct{}{}
 	}
 
 	return c
@@ -87,7 +86,7 @@ func (c *groupCollector) describe(ch chan<- *prometheus.Desc) {
 	ch <- c.infoDesc
 	ch <- c.unknownDesc
 
-	for _, info := range c.metricFields {
+	for _, info := range c.numericFields {
 		ch <- info.metricDesc
 	}
 }
@@ -106,7 +105,7 @@ func (c *groupCollector) collect(ch chan<- prometheus.Metric, data *lvmreport.Re
 
 		infoValues := slices.Clone(keyValues)
 
-		for _, name := range c.infoFields {
+		for _, name := range c.textFields {
 			infoValues = append(infoValues, row[name])
 		}
 
@@ -117,7 +116,7 @@ func (c *groupCollector) collect(ch chan<- prometheus.Metric, data *lvmreport.Re
 				continue
 			}
 
-			info, ok := c.metricFields[fieldName]
+			info, ok := c.numericFields[fieldName]
 			if !ok {
 				if _, ok := c.knownFields[fieldName]; !ok {
 					unknown[fieldName] = struct{}{}
