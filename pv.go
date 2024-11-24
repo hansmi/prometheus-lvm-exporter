@@ -6,16 +6,16 @@ var pvGroup = &group{
 	name:           lvmreport.PV,
 	infoMetricName: "pv_info",
 
-	keyFields: []*descriptor{
+	keyFields: []*textField{
 		{fieldName: "pv_uuid", metricName: "pv_uuid", desc: "Unique identifier"},
 	},
-	infoFields: []*descriptor{
+	textFields: []*textField{
 		{fieldName: "pv_attr", metricName: "pv_attr"},
 		{fieldName: "pv_fmt", metricName: "pv_fmt", desc: "Type of metadata"},
 		{fieldName: "pv_name", metricName: "pv_name", desc: "Name"},
 		{fieldName: "pv_tags", metricName: "pv_tags"},
 	},
-	metricFields: []*descriptor{
+	numericFields: []*numericField{
 		{
 			fieldName:  "dev_size",
 			metricName: "pv_dev_size_bytes",

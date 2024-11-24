@@ -6,10 +6,10 @@ var vgGroup = &group{
 	name:           lvmreport.VG,
 	infoMetricName: "vg_info",
 
-	keyFields: []*descriptor{
+	keyFields: []*textField{
 		{fieldName: "vg_uuid", metricName: "vg_uuid", desc: "Unique identifier"},
 	},
-	infoFields: []*descriptor{
+	textFields: []*textField{
 		{fieldName: "vg_allocation_policy", metricName: "vg_allocation_policy"},
 		{fieldName: "vg_attr", metricName: "vg_attr"},
 		{fieldName: "vg_fmt", metricName: "vg_fmt", desc: "Type of metadata"},
@@ -20,7 +20,7 @@ var vgGroup = &group{
 		{fieldName: "vg_systemid", metricName: "vg_systemid"},
 		{fieldName: "vg_tags", metricName: "vg_tags"},
 	},
-	metricFields: []*descriptor{
+	numericFields: []*numericField{
 		{
 			fieldName:  "lv_count",
 			metricName: "vg_lv_count",

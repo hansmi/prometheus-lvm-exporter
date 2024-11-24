@@ -31,19 +31,19 @@ func TestGroupCollectorCollect(t *testing.T) {
 			collector: newGroupCollector(&group{
 				name:           lvmreport.SEG,
 				infoMetricName: "test_info",
-				keyFields: []*descriptor{
+				keyFields: []*textField{
 					{
 						fieldName:  "key1",
 						metricName: "m_key1",
 					},
 				},
-				infoFields: []*descriptor{
+				textFields: []*textField{
 					{
 						fieldName:  "info1",
 						metricName: "m_info1",
 					},
 				},
-				metricFields: []*descriptor{
+				numericFields: []*numericField{
 					{
 						fieldName:  "col1",
 						metricName: "m_col1",
