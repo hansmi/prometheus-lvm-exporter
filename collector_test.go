@@ -73,8 +73,12 @@ func TestCollector(t *testing.T) {
 		{name: "issue30-lockargs"},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
-			for _, enableLegacyInfoLabels := range []bool{false} {
+			for _, enableLegacyInfoLabels := range []bool{false, true} {
 				expectedName := tc.name
+
+				if enableLegacyInfoLabels {
+					expectedName += "-legacy"
+				}
 
 				t.Run(strconv.FormatBool(enableLegacyInfoLabels), func(t *testing.T) {
 					c := newCollector(enableLegacyInfoLabels)

@@ -97,6 +97,7 @@ var lvGroup = &group{
 		{
 			fieldName:  "lv_full_name",
 			metricName: "lv_full_name",
+			flags:      asInfoLabel,
 			desc:       "Full name of LV including its VG, namely VG/LV",
 		},
 		{
@@ -132,6 +133,7 @@ var lvGroup = &group{
 		{
 			fieldName:  "lv_name",
 			metricName: "lv_name",
+			flags:      asInfoLabel,
 			desc:       "Name; LVs created for internal use are enclosed in brackets",
 		},
 		{

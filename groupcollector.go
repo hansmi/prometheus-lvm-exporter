@@ -27,22 +27,40 @@ func (f *groupField) collect(ch chan<- prometheus.Metric, rawValue string, keyVa
 	return nil
 }
 
+type groupTextField struct {
+	metricDesc *prometheus.Desc
+}
+
+func (f *groupTextField) collect(ch chan<- prometheus.Metric, rawValue string, keyValues []string) error {
+	labels := defaultStringSlicePool.get()
+	defer defaultStringSlicePool.put(labels)
+
+	labels = append(labels, keyValues...)
+	labels = append(labels, rawValue)
+
+	ch <- prometheus.MustNewConstMetric(f.metricDesc, prometheus.GaugeValue, 1, labels...)
+
+	return nil
+}
+
 type groupCollector struct {
 	name lvmreport.GroupName
 
 	infoDesc    *prometheus.Desc
 	unknownDesc *prometheus.Desc
 
-	keyFields     []string
-	textFields    []string
-	numericFields map[string]*groupField
-	knownFields   map[string]struct{}
+	keyFields       []string
+	textFields      map[string]*groupTextField
+	numericFields   map[string]*groupField
+	infoLabelFields []string
+	knownFields     map[string]struct{}
 }
 
 func newGroupCollector(enableLegacyInfoLabels bool, g *group) *groupCollector {
 	c := &groupCollector{
 		name:          g.name,
 		unknownDesc:   prometheus.NewDesc("unknown_field_count", "Fields reported by LVM not recognized by exporter", []string{"group", "details"}, nil),
+		textFields:    map[string]*groupTextField{},
 		numericFields: map[string]*groupField{},
 		knownFields:   map[string]struct{}{},
 	}
@@ -55,15 +73,18 @@ func newGroupCollector(enableLegacyInfoLabels bool, g *group) *groupCollector {
 		keyLabelNames = append(keyLabelNames, f.metricName)
 	}
 
-	infoLabelNames := slices.Clone(keyLabelNames)
-
 	for _, f := range g.textFields {
-		c.textFields = append(c.textFields, f.fieldName)
 		c.knownFields[f.fieldName] = struct{}{}
-		infoLabelNames = append(infoLabelNames, f.metricName)
-	}
 
-	c.infoDesc = prometheus.NewDesc(g.infoMetricName, "", infoLabelNames, nil)
+		if f.flags&asInfoLabel == 0 {
+			textLabelNames := slices.Clone(keyLabelNames)
+			textLabelNames = append(textLabelNames, f.metricName)
+
+			c.textFields[f.fieldName] = &groupTextField{
+				metricDesc: prometheus.NewDesc(f.metricName, f.desc, textLabelNames, nil),
+			}
+		}
+	}
 
 	for _, f := range g.numericFields {
 		info := &groupField{
@@ -77,12 +98,27 @@ func newGroupCollector(enableLegacyInfoLabels bool, g *group) *groupCollector {
 		c.knownFields[f.fieldName] = struct{}{}
 	}
 
+	infoLabelNames := slices.Clone(keyLabelNames)
+
+	for _, f := range g.textFields {
+		if enableLegacyInfoLabels || f.flags&asInfoLabel != 0 {
+			c.infoLabelFields = append(c.infoLabelFields, f.fieldName)
+			infoLabelNames = append(infoLabelNames, f.metricName)
+		}
+	}
+
+	c.infoDesc = prometheus.NewDesc(g.infoMetricName, "", infoLabelNames, nil)
+
 	return c
 }
 
 func (c *groupCollector) describe(ch chan<- *prometheus.Desc) {
 	ch <- c.infoDesc
 	ch <- c.unknownDesc
+
+	for _, info := range c.textFields {
+		ch <- info.metricDesc
+	}
 
 	for _, info := range c.numericFields {
 		ch <- info.metricDesc
@@ -103,26 +139,31 @@ func (c *groupCollector) collect(ch chan<- prometheus.Metric, data *lvmreport.Re
 
 		infoValues := slices.Clone(keyValues)
 
-		for _, name := range c.textFields {
+		for _, name := range c.infoLabelFields {
 			infoValues = append(infoValues, row[name])
 		}
 
 		ch <- prometheus.MustNewConstMetric(c.infoDesc, prometheus.GaugeValue, 1, infoValues...)
 
 		for fieldName, rawValue := range row {
-			if rawValue == "" {
-				continue
+			var collector interface {
+				collect(chan<- prometheus.Metric, string, []string) error
 			}
 
-			info, ok := c.numericFields[fieldName]
-			if !ok {
+			if info, ok := c.textFields[fieldName]; ok {
+				collector = info
+			} else if rawValue == "" {
+				continue
+			} else if info, ok := c.numericFields[fieldName]; ok {
+				collector = info
+			} else {
 				if _, ok := c.knownFields[fieldName]; !ok {
 					unknown[fieldName] = struct{}{}
 				}
 				continue
 			}
 
-			if err := info.collect(ch, rawValue, keyValues); err != nil {
+			if err := collector.collect(ch, rawValue, keyValues); err != nil {
 				allErrors.Append(fmt.Errorf("field %s: %w", fieldName, err))
 				continue
 			}

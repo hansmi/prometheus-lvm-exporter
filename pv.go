@@ -12,7 +12,12 @@ var pvGroup = &group{
 	textFields: []*textField{
 		{fieldName: "pv_attr", metricName: "pv_attr"},
 		{fieldName: "pv_fmt", metricName: "pv_fmt", desc: "Type of metadata"},
-		{fieldName: "pv_name", metricName: "pv_name", desc: "Name"},
+		{
+			fieldName:  "pv_name",
+			metricName: "pv_name",
+			flags:      asInfoLabel,
+			desc:       "Name",
+		},
 		{fieldName: "pv_tags", metricName: "pv_tags"},
 	},
 	numericFields: []*numericField{
