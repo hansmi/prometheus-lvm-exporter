@@ -12,18 +12,12 @@ import (
 )
 
 type groupField struct {
-	metricValue metricValueFunc
-	metricDesc  *prometheus.Desc
+	convert    metricValueFunc
+	metricDesc *prometheus.Desc
 }
 
 func (f *groupField) collect(ch chan<- prometheus.Metric, rawValue string, keyValues []string) error {
-	fn := f.metricValue
-
-	if fn == nil {
-		fn = fromNumeric
-	}
-
-	value, err := fn(rawValue)
+	value, err := f.convert(rawValue)
 	if err != nil {
 		return err
 	}
@@ -72,10 +66,14 @@ func newGroupCollector(g *group) *groupCollector {
 	c.infoDesc = prometheus.NewDesc(g.infoMetricName, "", infoLabelNames, nil)
 
 	for _, f := range g.numericFields {
-		c.numericFields[f.fieldName] = &groupField{
-			metricValue: f.metricValue,
-			metricDesc:  prometheus.NewDesc(f.metricName, f.desc, keyLabelNames, nil),
+		info := &groupField{
+			convert:    f.metricValue,
+			metricDesc: prometheus.NewDesc(f.metricName, f.desc, keyLabelNames, nil),
 		}
+		if info.convert == nil {
+			info.convert = fromNumeric
+		}
+		c.numericFields[f.fieldName] = info
 		c.knownFields[f.fieldName] = struct{}{}
 	}
 
