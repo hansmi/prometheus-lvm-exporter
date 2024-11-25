@@ -28,7 +28,7 @@ func TestGroupCollectorCollect(t *testing.T) {
 					{"key1": "3", "unknown key": "unknown", "count": "11.5"},
 				},
 			},
-			collector: newGroupCollector(&group{
+			collector: newGroupCollector(true, &group{
 				name:           lvmreport.SEG,
 				infoMetricName: "test_info",
 				keyFields: []*textField{
