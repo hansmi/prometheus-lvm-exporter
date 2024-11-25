@@ -39,7 +39,7 @@ type groupCollector struct {
 	knownFields   map[string]struct{}
 }
 
-func newGroupCollector(g *group) *groupCollector {
+func newGroupCollector(enableLegacyInfoLabels bool, g *group) *groupCollector {
 	c := &groupCollector{
 		name:          g.name,
 		unknownDesc:   prometheus.NewDesc("unknown_field_count", "Fields reported by LVM not recognized by exporter", []string{"group", "details"}, nil),
