@@ -15,7 +15,12 @@ var vgGroup = &group{
 		{fieldName: "vg_fmt", metricName: "vg_fmt", desc: "Type of metadata"},
 		{fieldName: "vg_lock_args", metricName: "vg_lock_args"},
 		{fieldName: "vg_lock_type", metricName: "vg_lock_type"},
-		{fieldName: "vg_name", metricName: "vg_name", desc: "Name"},
+		{
+			fieldName:  "vg_name",
+			metricName: "vg_name",
+			flags:      asInfoLabel,
+			desc:       "Name",
+		},
 		{fieldName: "vg_permissions", metricName: "vg_permissions"},
 		{fieldName: "vg_systemid", metricName: "vg_systemid"},
 		{fieldName: "vg_tags", metricName: "vg_tags"},

@@ -37,8 +37,11 @@ directly using [Go][golang] or [GoReleaser][goreleaser].
 ## Example metrics
 
 ```
-lvm_pv_info{pv_fmt="lvm2",pv_name="/dev/sda1",pv_uuid="yc1zVe-…"} 1
-lvm_pv_info{pv_fmt="lvm2",pv_name="/dev/sdb1",pv_uuid="WVIH97-…"} 1
+lvm_pv_info{pv_name="/dev/sda1",pv_uuid="yc1zVe-…"} 1
+lvm_pv_info{pv_name="/dev/sdb1",pv_uuid="WVIH97-…"} 1
+
+lvm_pv_fmt{pv_fmt="lvm2",pv_uuid="yc1zVe-…"} 1
+lvm_pv_fmt{pv_fmt="lvm2",pv_uuid="WVIH97-…"} 1
 
 lvm_pv_free_bytes{pv_uuid="WVIH97-…"} 9.14358272e+08
 lvm_pv_free_bytes{pv_uuid="yc1zVe-…"} 1.040187392e+09

@@ -8,6 +8,13 @@ func fromNumeric(value string) (float64, error) {
 	return strconv.ParseFloat(value, 64)
 }
 
+type fieldFlag uint
+
+const (
+	// Whether the field should be included as a label on an info metric.
+	asInfoLabel fieldFlag = 1 << iota
+)
+
 type field interface {
 	Name() string
 	MetricName() string
@@ -19,6 +26,8 @@ type field interface {
 type textField struct {
 	fieldName string
 	desc      string
+
+	flags fieldFlag
 
 	metricName string
 }
