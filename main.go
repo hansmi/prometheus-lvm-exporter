@@ -27,6 +27,13 @@ func main() {
 	disableExporterMetrics := kingpin.Flag("web.disable-exporter-metrics", "Exclude metrics about the exporter itself").Bool()
 	cmd := kingpin.Flag("command", "Path to the LVM binary").Default("/usr/sbin/lvm").String()
 
+	enableLegacyInfoLabels := kingpin.Flag("legacy-info-labels",
+		"Include values for non-numeric LVM report fields as labels on info"+
+			` metrics (e.g. "pv_fmt"). These labels are deprecated and will`+
+			" be removed in a future version. Their values are already"+
+			" reported as separate metrics.").
+		Default("true").Bool()
+
 	promslogConfig := &promslog.Config{}
 	promslogflag.AddFlags(kingpin.CommandLine, promslogConfig)
 
@@ -45,7 +52,7 @@ func main() {
 	registry := prometheus.NewPedanticRegistry()
 
 	lvmRegistry := prometheus.WrapRegistererWithPrefix(metricPrefix, registry)
-	lvmRegistry.MustRegister(newCommandCollector(cmdParts))
+	lvmRegistry.MustRegister(newCommandCollector(*enableLegacyInfoLabels, cmdParts))
 
 	if !*disableExporterMetrics {
 		registry.MustRegister(

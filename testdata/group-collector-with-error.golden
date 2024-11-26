@@ -2,6 +2,9 @@
 # TYPE lvm_m_count gauge
 lvm_m_count{m_key1="2"} 22
 lvm_m_count{m_key1="3"} 11.5
+# HELP lvm_m_info1 
+# TYPE lvm_m_info1 gauge
+lvm_m_info1{m_info1="info:2",m_key1="2"} 1
 # HELP lvm_test_info 
 # TYPE lvm_test_info gauge
 lvm_test_info{m_info1="",m_key1="1"} 1

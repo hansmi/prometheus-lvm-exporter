@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"strconv"
 	"testing"
 
 	"github.com/hansmi/prometheus-lvm-exporter/lvmreport"
@@ -72,13 +73,23 @@ func TestCollector(t *testing.T) {
 		{name: "issue30-lockargs"},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
-			c := newCollector()
-			c.load = func(ctx context.Context) (*lvmreport.ReportData, error) {
-				return lvmreport.FromFile(fmt.Sprintf("testdata/%s.json", tc.name))
-			}
+			for _, enableLegacyInfoLabels := range []bool{false, true} {
+				expectedName := tc.name
 
-			g := goldie.New(t)
-			g.Assert(t, tc.name, gatherAndFormat(t, c))
+				if enableLegacyInfoLabels {
+					expectedName += "-legacy"
+				}
+
+				t.Run(strconv.FormatBool(enableLegacyInfoLabels), func(t *testing.T) {
+					c := newCollector(enableLegacyInfoLabels)
+					c.load = func(ctx context.Context) (*lvmreport.ReportData, error) {
+						return lvmreport.FromFile(fmt.Sprintf("testdata/%s.json", tc.name))
+					}
+
+					g := goldie.New(t)
+					g.Assert(t, expectedName, gatherAndFormat(t, c))
+				})
+			}
 		})
 	}
 }

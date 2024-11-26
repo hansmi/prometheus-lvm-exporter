@@ -6,14 +6,14 @@ var lvGroup = &group{
 	name:           lvmreport.LV,
 	infoMetricName: "lv_info",
 
-	keyFields: []*descriptor{
+	keyFields: []*textField{
 		{
 			fieldName:  "lv_uuid",
 			metricName: "lv_uuid",
 			desc:       "Unique identifier",
 		},
 	},
-	infoFields: []*descriptor{
+	textFields: []*textField{
 		{
 			fieldName:  "convert_lv",
 			metricName: "lv_convert_lv",
@@ -97,6 +97,7 @@ var lvGroup = &group{
 		{
 			fieldName:  "lv_full_name",
 			metricName: "lv_full_name",
+			flags:      asInfoLabel,
 			desc:       "Full name of LV including its VG, namely VG/LV",
 		},
 		{
@@ -132,6 +133,7 @@ var lvGroup = &group{
 		{
 			fieldName:  "lv_name",
 			metricName: "lv_name",
+			flags:      asInfoLabel,
 			desc:       "Name; LVs created for internal use are enclosed in brackets",
 		},
 		{
@@ -240,7 +242,7 @@ var lvGroup = &group{
 			desc:       "For vdo pools, its current operating mode",
 		},
 	},
-	metricFields: []*descriptor{
+	numericFields: []*numericField{
 		{
 			fieldName:  "cache_dirty_blocks",
 			metricName: "lv_cache_dirty_blocks",

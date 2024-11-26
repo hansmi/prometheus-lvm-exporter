@@ -100,8 +100,8 @@ lvm_lv_inactive_table{lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"} -1
 lvm_lv_inactive_table{lv_uuid="rG0ue9-Kw1s-beAJ-shyy-AnID-6NRY-rtcN8K"} -1
 # HELP lvm_lv_info 
 # TYPE lvm_lv_info gauge
-lvm_lv_info{lv_full_name="vgdata/home",lv_name="home",lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"} 1
-lvm_lv_info{lv_full_name="vgdata/tmp",lv_name="tmp",lv_uuid="rG0ue9-Kw1s-beAJ-shyy-AnID-6NRY-rtcN8K"} 1
+lvm_lv_info{lv_active="unknown",lv_allocation_policy="inherit",lv_ancestors="",lv_attr="-wi-XX----",lv_convert_lv="",lv_convert_lv_uuid="",lv_data_lv="",lv_data_lv_uuid="",lv_descendants="",lv_dm_path="/dev/mapper/vgdata-home",lv_full_ancestors="",lv_full_descendants="",lv_full_name="vgdata/home",lv_health_status="",lv_host="buster",lv_kernel_cache_policy="",lv_kernel_cache_settings="",lv_kernel_discards="",lv_kernel_metadata_format="",lv_kernel_read_ahead_bytes="-1",lv_layout="linear",lv_lockargs="",lv_metadata_lv="",lv_metadata_lv_uuid="",lv_mirror_log="",lv_mirror_log_uuid="",lv_modules="",lv_move_pv="",lv_move_pv_uuid="",lv_name="home",lv_origin="",lv_origin_uuid="",lv_parent="",lv_path="/dev/vgdata/home",lv_permissions="unknown",lv_pool_lv="",lv_pool_lv_uuid="",lv_raid_sync_action="",lv_raidintegritymode="",lv_role="public",lv_tags="",lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B",lv_vdo_compression_state="",lv_vdo_index_state="",lv_vdo_operating_mode="",lv_when_full=""} 1
+lvm_lv_info{lv_active="unknown",lv_allocation_policy="inherit",lv_ancestors="",lv_attr="-wi-XX----",lv_convert_lv="",lv_convert_lv_uuid="",lv_data_lv="",lv_data_lv_uuid="",lv_descendants="",lv_dm_path="/dev/mapper/vgdata-tmp",lv_full_ancestors="",lv_full_descendants="",lv_full_name="vgdata/tmp",lv_health_status="",lv_host="buster",lv_kernel_cache_policy="",lv_kernel_cache_settings="",lv_kernel_discards="",lv_kernel_metadata_format="",lv_kernel_read_ahead_bytes="-1",lv_layout="linear",lv_lockargs="",lv_metadata_lv="",lv_metadata_lv_uuid="",lv_mirror_log="",lv_mirror_log_uuid="",lv_modules="",lv_move_pv="",lv_move_pv_uuid="",lv_name="tmp",lv_origin="",lv_origin_uuid="",lv_parent="",lv_path="/dev/vgdata/tmp",lv_permissions="unknown",lv_pool_lv="",lv_pool_lv_uuid="",lv_raid_sync_action="",lv_raidintegritymode="",lv_role="public",lv_tags="",lv_uuid="rG0ue9-Kw1s-beAJ-shyy-AnID-6NRY-rtcN8K",lv_vdo_compression_state="",lv_vdo_index_state="",lv_vdo_operating_mode="",lv_when_full=""} 1
 # HELP lvm_lv_initial_image_sync Set if mirror/RAID images underwent initial resynchronization
 # TYPE lvm_lv_initial_image_sync gauge
 lvm_lv_initial_image_sync{lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"} 0
@@ -308,8 +308,8 @@ lvm_pv_in_use{pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 1
 lvm_pv_in_use{pv_uuid="lMenN6-bGnN-5B5o-MW7n-2ef2-VWuk-E27yru"} 1
 # HELP lvm_pv_info 
 # TYPE lvm_pv_info gauge
-lvm_pv_info{pv_name="/dev/loop0",pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 1
-lvm_pv_info{pv_name="/dev/loop1",pv_uuid="lMenN6-bGnN-5B5o-MW7n-2ef2-VWuk-E27yru"} 1
+lvm_pv_info{pv_attr="a--",pv_fmt="lvm2",pv_name="/dev/loop0",pv_tags="",pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 1
+lvm_pv_info{pv_attr="a--",pv_fmt="lvm2",pv_name="/dev/loop1",pv_tags="",pv_uuid="lMenN6-bGnN-5B5o-MW7n-2ef2-VWuk-E27yru"} 1
 # HELP lvm_pv_major Device major number
 # TYPE lvm_pv_major gauge
 lvm_pv_major{pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 7
@@ -402,7 +402,7 @@ lvm_vg_free_bytes{vg_uuid="qeSEXL-5Pkg-Tjqz-Ra2g-z49g-z7FM-qY2hDs"} 8.30472192e+
 lvm_vg_free_count{vg_uuid="qeSEXL-5Pkg-Tjqz-Ra2g-z49g-z7FM-qY2hDs"} 198
 # HELP lvm_vg_info 
 # TYPE lvm_vg_info gauge
-lvm_vg_info{vg_name="vgdata",vg_uuid="qeSEXL-5Pkg-Tjqz-Ra2g-z49g-z7FM-qY2hDs"} 1
+lvm_vg_info{vg_allocation_policy="normal",vg_attr="wz--n-",vg_fmt="lvm2",vg_lock_args="",vg_lock_type="",vg_name="vgdata",vg_permissions="writeable",vg_systemid="",vg_tags="",vg_uuid="qeSEXL-5Pkg-Tjqz-Ra2g-z49g-z7FM-qY2hDs"} 1
 # HELP lvm_vg_lock_args 
 # TYPE lvm_vg_lock_args gauge
 lvm_vg_lock_args{vg_lock_args="",vg_uuid="qeSEXL-5Pkg-Tjqz-Ra2g-z49g-z7FM-qY2hDs"} 1

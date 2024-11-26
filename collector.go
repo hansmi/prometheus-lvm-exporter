@@ -25,22 +25,22 @@ func newEmptyCollector() *collector {
 	}
 }
 
-func newCollector() *collector {
+func newCollector(enableLegacyInfoLabels bool) *collector {
 	c := newEmptyCollector()
 
 	for _, i := range allGroups {
-		c.gc = append(c.gc, newGroupCollector(i))
+		c.gc = append(c.gc, newGroupCollector(enableLegacyInfoLabels, i))
 	}
 
 	return c
 }
 
-func newCommandCollector(args []string) *collector {
+func newCommandCollector(enableLegacyInfoLabels bool, args []string) *collector {
 	cmd := lvmreport.NewCommand(args)
 
 	var sfg singleflight.Group
 
-	c := newCollector()
+	c := newCollector(enableLegacyInfoLabels)
 	c.load = func(ctx context.Context) (*lvmreport.ReportData, error) {
 		// Avoid concurrent invocations
 		data, err, _ := sfg.Do("", func() (interface{}, error) {
