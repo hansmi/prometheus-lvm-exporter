@@ -13,6 +13,9 @@ type fieldFlag uint
 const (
 	// Whether the field should be included as a label on an info metric.
 	asInfoLabel fieldFlag = 1 << iota
+
+	// Include the raw field value as a label on the metric.
+	asRawLabel
 )
 
 type field interface {
@@ -51,6 +54,8 @@ func (f *textField) Help() string {
 type numericField struct {
 	fieldName string
 	desc      string
+
+	flags fieldFlag
 
 	metricName  string
 	metricValue metricValueFunc

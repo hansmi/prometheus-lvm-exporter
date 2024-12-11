@@ -276,12 +276,12 @@ lvm_lv_kernel_discards{lv_kernel_discards="",lv_uuid="i3KUcx-M3FS-wgi2-xKDp-4YGW
 lvm_lv_kernel_discards{lv_kernel_discards="",lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ"} 1
 # HELP lvm_lv_kernel_major Currently assigned major number or -1 if LV is not active
 # TYPE lvm_lv_kernel_major gauge
-lvm_lv_kernel_major{lv_uuid="6nDiR2-rlXW-IN0z-HsGH-7UUY-eTZJ-TJPiH0"} 253
-lvm_lv_kernel_major{lv_uuid="GgXmtF-MFKw-Rqal-cffB-c3xj-9sJf-Rm7t9S"} 253
-lvm_lv_kernel_major{lv_uuid="NmOksX-BefX-Inky-H625-uOYO-I2iR-REM2ij"} 253
-lvm_lv_kernel_major{lv_uuid="ecsqFI-XwKp-2nnY-DxMG-6ezh-wI2g-jo0tgd"} 253
-lvm_lv_kernel_major{lv_uuid="i3KUcx-M3FS-wgi2-xKDp-4YGW-Zuvj-OGjRop"} -1
-lvm_lv_kernel_major{lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ"} -1
+lvm_lv_kernel_major{lv_kernel_major="-1",lv_uuid="i3KUcx-M3FS-wgi2-xKDp-4YGW-Zuvj-OGjRop"} -1
+lvm_lv_kernel_major{lv_kernel_major="-1",lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ"} -1
+lvm_lv_kernel_major{lv_kernel_major="253",lv_uuid="6nDiR2-rlXW-IN0z-HsGH-7UUY-eTZJ-TJPiH0"} 253
+lvm_lv_kernel_major{lv_kernel_major="253",lv_uuid="GgXmtF-MFKw-Rqal-cffB-c3xj-9sJf-Rm7t9S"} 253
+lvm_lv_kernel_major{lv_kernel_major="253",lv_uuid="NmOksX-BefX-Inky-H625-uOYO-I2iR-REM2ij"} 253
+lvm_lv_kernel_major{lv_kernel_major="253",lv_uuid="ecsqFI-XwKp-2nnY-DxMG-6ezh-wI2g-jo0tgd"} 253
 # HELP lvm_lv_kernel_metadata_format Cache metadata format used in kernel
 # TYPE lvm_lv_kernel_metadata_format gauge
 lvm_lv_kernel_metadata_format{lv_kernel_metadata_format="",lv_uuid="6nDiR2-rlXW-IN0z-HsGH-7UUY-eTZJ-TJPiH0"} 1
@@ -292,12 +292,12 @@ lvm_lv_kernel_metadata_format{lv_kernel_metadata_format="2",lv_uuid="GgXmtF-MFKw
 lvm_lv_kernel_metadata_format{lv_kernel_metadata_format="2",lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ"} 1
 # HELP lvm_lv_kernel_minor Currently assigned minor number or -1 if LV is not active
 # TYPE lvm_lv_kernel_minor gauge
-lvm_lv_kernel_minor{lv_uuid="6nDiR2-rlXW-IN0z-HsGH-7UUY-eTZJ-TJPiH0"} 2
-lvm_lv_kernel_minor{lv_uuid="GgXmtF-MFKw-Rqal-cffB-c3xj-9sJf-Rm7t9S"} 0
-lvm_lv_kernel_minor{lv_uuid="NmOksX-BefX-Inky-H625-uOYO-I2iR-REM2ij"} 1
-lvm_lv_kernel_minor{lv_uuid="ecsqFI-XwKp-2nnY-DxMG-6ezh-wI2g-jo0tgd"} 3
-lvm_lv_kernel_minor{lv_uuid="i3KUcx-M3FS-wgi2-xKDp-4YGW-Zuvj-OGjRop"} -1
-lvm_lv_kernel_minor{lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ"} -1
+lvm_lv_kernel_minor{lv_kernel_minor="-1",lv_uuid="i3KUcx-M3FS-wgi2-xKDp-4YGW-Zuvj-OGjRop"} -1
+lvm_lv_kernel_minor{lv_kernel_minor="-1",lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ"} -1
+lvm_lv_kernel_minor{lv_kernel_minor="0",lv_uuid="GgXmtF-MFKw-Rqal-cffB-c3xj-9sJf-Rm7t9S"} 0
+lvm_lv_kernel_minor{lv_kernel_minor="1",lv_uuid="NmOksX-BefX-Inky-H625-uOYO-I2iR-REM2ij"} 1
+lvm_lv_kernel_minor{lv_kernel_minor="2",lv_uuid="6nDiR2-rlXW-IN0z-HsGH-7UUY-eTZJ-TJPiH0"} 2
+lvm_lv_kernel_minor{lv_kernel_minor="3",lv_uuid="ecsqFI-XwKp-2nnY-DxMG-6ezh-wI2g-jo0tgd"} 3
 # HELP lvm_lv_kernel_read_ahead_bytes Currently-in-use read ahead setting
 # TYPE lvm_lv_kernel_read_ahead_bytes gauge
 lvm_lv_kernel_read_ahead_bytes{lv_kernel_read_ahead_bytes="-1",lv_uuid="i3KUcx-M3FS-wgi2-xKDp-4YGW-Zuvj-OGjRop"} 1
@@ -332,12 +332,12 @@ lvm_lv_lockargs{lv_lockargs="",lv_uuid="i3KUcx-M3FS-wgi2-xKDp-4YGW-Zuvj-OGjRop"}
 lvm_lv_lockargs{lv_lockargs="",lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ"} 1
 # HELP lvm_lv_major Persistent major number or -1 if not persistent
 # TYPE lvm_lv_major gauge
-lvm_lv_major{lv_uuid="6nDiR2-rlXW-IN0z-HsGH-7UUY-eTZJ-TJPiH0"} -1
-lvm_lv_major{lv_uuid="GgXmtF-MFKw-Rqal-cffB-c3xj-9sJf-Rm7t9S"} -1
-lvm_lv_major{lv_uuid="NmOksX-BefX-Inky-H625-uOYO-I2iR-REM2ij"} -1
-lvm_lv_major{lv_uuid="ecsqFI-XwKp-2nnY-DxMG-6ezh-wI2g-jo0tgd"} -1
-lvm_lv_major{lv_uuid="i3KUcx-M3FS-wgi2-xKDp-4YGW-Zuvj-OGjRop"} -1
-lvm_lv_major{lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ"} -1
+lvm_lv_major{lv_major="-1",lv_uuid="6nDiR2-rlXW-IN0z-HsGH-7UUY-eTZJ-TJPiH0"} -1
+lvm_lv_major{lv_major="-1",lv_uuid="GgXmtF-MFKw-Rqal-cffB-c3xj-9sJf-Rm7t9S"} -1
+lvm_lv_major{lv_major="-1",lv_uuid="NmOksX-BefX-Inky-H625-uOYO-I2iR-REM2ij"} -1
+lvm_lv_major{lv_major="-1",lv_uuid="ecsqFI-XwKp-2nnY-DxMG-6ezh-wI2g-jo0tgd"} -1
+lvm_lv_major{lv_major="-1",lv_uuid="i3KUcx-M3FS-wgi2-xKDp-4YGW-Zuvj-OGjRop"} -1
+lvm_lv_major{lv_major="-1",lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ"} -1
 # HELP lvm_lv_merge_failed Set if snapshot merge failed
 # TYPE lvm_lv_merge_failed gauge
 lvm_lv_merge_failed{lv_uuid="6nDiR2-rlXW-IN0z-HsGH-7UUY-eTZJ-TJPiH0"} -1
@@ -379,12 +379,12 @@ lvm_lv_metadata_percent{lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ"} 0.49
 lvm_lv_metadata_size_bytes{lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ"} 8.388608e+06
 # HELP lvm_lv_minor Persistent minor number or -1 if not persistent
 # TYPE lvm_lv_minor gauge
-lvm_lv_minor{lv_uuid="6nDiR2-rlXW-IN0z-HsGH-7UUY-eTZJ-TJPiH0"} -1
-lvm_lv_minor{lv_uuid="GgXmtF-MFKw-Rqal-cffB-c3xj-9sJf-Rm7t9S"} -1
-lvm_lv_minor{lv_uuid="NmOksX-BefX-Inky-H625-uOYO-I2iR-REM2ij"} -1
-lvm_lv_minor{lv_uuid="ecsqFI-XwKp-2nnY-DxMG-6ezh-wI2g-jo0tgd"} -1
-lvm_lv_minor{lv_uuid="i3KUcx-M3FS-wgi2-xKDp-4YGW-Zuvj-OGjRop"} -1
-lvm_lv_minor{lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ"} -1
+lvm_lv_minor{lv_minor="-1",lv_uuid="6nDiR2-rlXW-IN0z-HsGH-7UUY-eTZJ-TJPiH0"} -1
+lvm_lv_minor{lv_minor="-1",lv_uuid="GgXmtF-MFKw-Rqal-cffB-c3xj-9sJf-Rm7t9S"} -1
+lvm_lv_minor{lv_minor="-1",lv_uuid="NmOksX-BefX-Inky-H625-uOYO-I2iR-REM2ij"} -1
+lvm_lv_minor{lv_minor="-1",lv_uuid="ecsqFI-XwKp-2nnY-DxMG-6ezh-wI2g-jo0tgd"} -1
+lvm_lv_minor{lv_minor="-1",lv_uuid="i3KUcx-M3FS-wgi2-xKDp-4YGW-Zuvj-OGjRop"} -1
+lvm_lv_minor{lv_minor="-1",lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ"} -1
 # HELP lvm_lv_mirror_log For mirrors, the LV holding the synchronisation log
 # TYPE lvm_lv_mirror_log gauge
 lvm_lv_mirror_log{lv_mirror_log="",lv_uuid="6nDiR2-rlXW-IN0z-HsGH-7UUY-eTZJ-TJPiH0"} 1
@@ -627,8 +627,8 @@ lvm_pv_info{pv_name="/dev/loop0",pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI
 lvm_pv_info{pv_name="/dev/loop1",pv_uuid="lMenN6-bGnN-5B5o-MW7n-2ef2-VWuk-E27yru"} 1
 # HELP lvm_pv_major Device major number
 # TYPE lvm_pv_major gauge
-lvm_pv_major{pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 7
-lvm_pv_major{pv_uuid="lMenN6-bGnN-5B5o-MW7n-2ef2-VWuk-E27yru"} 7
+lvm_pv_major{pv_major="7",pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 7
+lvm_pv_major{pv_major="7",pv_uuid="lMenN6-bGnN-5B5o-MW7n-2ef2-VWuk-E27yru"} 7
 # HELP lvm_pv_mda_count Number of metadata areas
 # TYPE lvm_pv_mda_count gauge
 lvm_pv_mda_count{pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 1
@@ -647,8 +647,8 @@ lvm_pv_mda_used_count{pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 1
 lvm_pv_mda_used_count{pv_uuid="lMenN6-bGnN-5B5o-MW7n-2ef2-VWuk-E27yru"} 1
 # HELP lvm_pv_minor Device minor number
 # TYPE lvm_pv_minor gauge
-lvm_pv_minor{pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 0
-lvm_pv_minor{pv_uuid="lMenN6-bGnN-5B5o-MW7n-2ef2-VWuk-E27yru"} 1
+lvm_pv_minor{pv_minor="0",pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 0
+lvm_pv_minor{pv_minor="1",pv_uuid="lMenN6-bGnN-5B5o-MW7n-2ef2-VWuk-E27yru"} 1
 # HELP lvm_pv_missing Set if this device is missing in system
 # TYPE lvm_pv_missing gauge
 lvm_pv_missing{pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 0

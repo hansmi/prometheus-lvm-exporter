@@ -74,6 +74,7 @@ var pvGroup = &group{
 		{
 			fieldName:  "pv_major",
 			metricName: "pv_major",
+			flags:      asRawLabel,
 			desc:       "Device major number",
 		},
 		{
@@ -99,6 +100,7 @@ var pvGroup = &group{
 		{
 			fieldName:  "pv_minor",
 			metricName: "pv_minor",
+			flags:      asRawLabel,
 			desc:       "Device minor number",
 		},
 		{
