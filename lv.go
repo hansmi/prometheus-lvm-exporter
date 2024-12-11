@@ -356,11 +356,13 @@ var lvGroup = &group{
 		{
 			fieldName:  "lv_kernel_major",
 			metricName: "lv_kernel_major",
+			flags:      asRawLabel,
 			desc:       "Currently assigned major number or -1 if LV is not active",
 		},
 		{
 			fieldName:  "lv_kernel_minor",
 			metricName: "lv_kernel_minor",
+			flags:      asRawLabel,
 			desc:       "Currently assigned minor number or -1 if LV is not active",
 		},
 		{
@@ -371,6 +373,7 @@ var lvGroup = &group{
 		{
 			fieldName:  "lv_major",
 			metricName: "lv_major",
+			flags:      asRawLabel,
 			desc:       "Persistent major number or -1 if not persistent",
 		},
 		{
@@ -391,6 +394,7 @@ var lvGroup = &group{
 		{
 			fieldName:  "lv_minor",
 			metricName: "lv_minor",
+			flags:      asRawLabel,
 			desc:       "Persistent minor number or -1 if not persistent",
 		},
 		{

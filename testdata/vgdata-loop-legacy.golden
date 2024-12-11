@@ -120,16 +120,16 @@ lvm_lv_kernel_discards{lv_kernel_discards="",lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG
 lvm_lv_kernel_discards{lv_kernel_discards="",lv_uuid="rG0ue9-Kw1s-beAJ-shyy-AnID-6NRY-rtcN8K"} 1
 # HELP lvm_lv_kernel_major Currently assigned major number or -1 if LV is not active
 # TYPE lvm_lv_kernel_major gauge
-lvm_lv_kernel_major{lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"} -1
-lvm_lv_kernel_major{lv_uuid="rG0ue9-Kw1s-beAJ-shyy-AnID-6NRY-rtcN8K"} -1
+lvm_lv_kernel_major{lv_kernel_major="-1",lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"} -1
+lvm_lv_kernel_major{lv_kernel_major="-1",lv_uuid="rG0ue9-Kw1s-beAJ-shyy-AnID-6NRY-rtcN8K"} -1
 # HELP lvm_lv_kernel_metadata_format Cache metadata format used in kernel
 # TYPE lvm_lv_kernel_metadata_format gauge
 lvm_lv_kernel_metadata_format{lv_kernel_metadata_format="",lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"} 1
 lvm_lv_kernel_metadata_format{lv_kernel_metadata_format="",lv_uuid="rG0ue9-Kw1s-beAJ-shyy-AnID-6NRY-rtcN8K"} 1
 # HELP lvm_lv_kernel_minor Currently assigned minor number or -1 if LV is not active
 # TYPE lvm_lv_kernel_minor gauge
-lvm_lv_kernel_minor{lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"} -1
-lvm_lv_kernel_minor{lv_uuid="rG0ue9-Kw1s-beAJ-shyy-AnID-6NRY-rtcN8K"} -1
+lvm_lv_kernel_minor{lv_kernel_minor="-1",lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"} -1
+lvm_lv_kernel_minor{lv_kernel_minor="-1",lv_uuid="rG0ue9-Kw1s-beAJ-shyy-AnID-6NRY-rtcN8K"} -1
 # HELP lvm_lv_kernel_read_ahead_bytes Currently-in-use read ahead setting
 # TYPE lvm_lv_kernel_read_ahead_bytes gauge
 lvm_lv_kernel_read_ahead_bytes{lv_kernel_read_ahead_bytes="-1",lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"} 1
@@ -148,8 +148,8 @@ lvm_lv_lockargs{lv_lockargs="",lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"}
 lvm_lv_lockargs{lv_lockargs="",lv_uuid="rG0ue9-Kw1s-beAJ-shyy-AnID-6NRY-rtcN8K"} 1
 # HELP lvm_lv_major Persistent major number or -1 if not persistent
 # TYPE lvm_lv_major gauge
-lvm_lv_major{lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"} -1
-lvm_lv_major{lv_uuid="rG0ue9-Kw1s-beAJ-shyy-AnID-6NRY-rtcN8K"} -1
+lvm_lv_major{lv_major="-1",lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"} -1
+lvm_lv_major{lv_major="-1",lv_uuid="rG0ue9-Kw1s-beAJ-shyy-AnID-6NRY-rtcN8K"} -1
 # HELP lvm_lv_merge_failed Set if snapshot merge failed
 # TYPE lvm_lv_merge_failed gauge
 lvm_lv_merge_failed{lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"} -1
@@ -168,8 +168,8 @@ lvm_lv_metadata_lv_uuid{lv_metadata_lv_uuid="",lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-tw
 lvm_lv_metadata_lv_uuid{lv_metadata_lv_uuid="",lv_uuid="rG0ue9-Kw1s-beAJ-shyy-AnID-6NRY-rtcN8K"} 1
 # HELP lvm_lv_minor Persistent minor number or -1 if not persistent
 # TYPE lvm_lv_minor gauge
-lvm_lv_minor{lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"} -1
-lvm_lv_minor{lv_uuid="rG0ue9-Kw1s-beAJ-shyy-AnID-6NRY-rtcN8K"} -1
+lvm_lv_minor{lv_minor="-1",lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"} -1
+lvm_lv_minor{lv_minor="-1",lv_uuid="rG0ue9-Kw1s-beAJ-shyy-AnID-6NRY-rtcN8K"} -1
 # HELP lvm_lv_mirror_log For mirrors, the LV holding the synchronisation log
 # TYPE lvm_lv_mirror_log gauge
 lvm_lv_mirror_log{lv_mirror_log="",lv_uuid="U3cZuX-dPzH-Pz0e-UzHP-twnG-EzbU-EWn81B"} 1
@@ -312,8 +312,8 @@ lvm_pv_info{pv_attr="a--",pv_fmt="lvm2",pv_name="/dev/loop0",pv_tags="",pv_uuid=
 lvm_pv_info{pv_attr="a--",pv_fmt="lvm2",pv_name="/dev/loop1",pv_tags="",pv_uuid="lMenN6-bGnN-5B5o-MW7n-2ef2-VWuk-E27yru"} 1
 # HELP lvm_pv_major Device major number
 # TYPE lvm_pv_major gauge
-lvm_pv_major{pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 7
-lvm_pv_major{pv_uuid="lMenN6-bGnN-5B5o-MW7n-2ef2-VWuk-E27yru"} 7
+lvm_pv_major{pv_major="7",pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 7
+lvm_pv_major{pv_major="7",pv_uuid="lMenN6-bGnN-5B5o-MW7n-2ef2-VWuk-E27yru"} 7
 # HELP lvm_pv_mda_count Number of metadata areas
 # TYPE lvm_pv_mda_count gauge
 lvm_pv_mda_count{pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 1
@@ -332,8 +332,8 @@ lvm_pv_mda_used_count{pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 1
 lvm_pv_mda_used_count{pv_uuid="lMenN6-bGnN-5B5o-MW7n-2ef2-VWuk-E27yru"} 1
 # HELP lvm_pv_minor Device minor number
 # TYPE lvm_pv_minor gauge
-lvm_pv_minor{pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 0
-lvm_pv_minor{pv_uuid="lMenN6-bGnN-5B5o-MW7n-2ef2-VWuk-E27yru"} 1
+lvm_pv_minor{pv_minor="0",pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 0
+lvm_pv_minor{pv_minor="1",pv_uuid="lMenN6-bGnN-5B5o-MW7n-2ef2-VWuk-E27yru"} 1
 # HELP lvm_pv_missing Set if this device is missing in system
 # TYPE lvm_pv_missing gauge
 lvm_pv_missing{pv_uuid="hHVkeX-XRdB-hAGU-MHza-yTY4-P3xJ-oij0yI"} 0

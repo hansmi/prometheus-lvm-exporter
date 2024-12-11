@@ -12,6 +12,7 @@ import (
 )
 
 type groupField struct {
+	rawLabel   bool
 	convert    metricValueFunc
 	metricDesc *prometheus.Desc
 }
@@ -22,7 +23,17 @@ func (f *groupField) collect(ch chan<- prometheus.Metric, rawValue string, keyVa
 		return err
 	}
 
-	ch <- prometheus.MustNewConstMetric(f.metricDesc, prometheus.GaugeValue, value, keyValues...)
+	labels := keyValues
+
+	if f.rawLabel {
+		labels = defaultStringSlicePool.get()
+		defer defaultStringSlicePool.put(labels)
+
+		labels = append(labels, keyValues...)
+		labels = append(labels, rawValue)
+	}
+
+	ch <- prometheus.MustNewConstMetric(f.metricDesc, prometheus.GaugeValue, value, labels...)
 
 	return nil
 }
@@ -87,9 +98,17 @@ func newGroupCollector(enableLegacyInfoLabels bool, g *group) *groupCollector {
 	}
 
 	for _, f := range g.numericFields {
+		labelNames := keyLabelNames
+
+		if f.flags&asRawLabel != 0 {
+			labelNames = slices.Clone(labelNames)
+			labelNames = append(labelNames, f.metricName)
+		}
+
 		info := &groupField{
+			rawLabel:   f.flags&asRawLabel != 0,
 			convert:    f.metricValue,
-			metricDesc: prometheus.NewDesc(f.metricName, f.desc, keyLabelNames, nil),
+			metricDesc: prometheus.NewDesc(f.metricName, f.desc, labelNames, nil),
 		}
 		if info.convert == nil {
 			info.convert = fromNumeric
