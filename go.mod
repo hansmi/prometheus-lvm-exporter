@@ -13,7 +13,7 @@ require (
 	github.com/prometheus/exporter-toolkit v0.14.0
 	github.com/sebdah/goldie/v2 v2.5.5
 	golang.org/x/exp v0.0.0-20241108190413-2d47ceb2692f
-	golang.org/x/sync v0.12.0
+	golang.org/x/sync v0.13.0
 )
 
 require (
