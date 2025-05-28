@@ -9,6 +9,7 @@ import (
 
 type root struct {
 	Reports []ReportData `json:"report"`
+	Log     []any        `json:"log"`
 }
 
 type reader struct {

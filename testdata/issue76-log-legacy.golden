@@ -1,0 +1,201 @@
+# HELP lvm_pv_allocatable Set if this device can be used for allocation
+# TYPE lvm_pv_allocatable gauge
+lvm_pv_allocatable{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 1
+lvm_pv_allocatable{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 1
+# HELP lvm_pv_attr 
+# TYPE lvm_pv_attr gauge
+lvm_pv_attr{pv_attr="a--",pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 1
+lvm_pv_attr{pv_attr="a--",pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 1
+# HELP lvm_pv_ba_size_bytes Size of PV Bootloader Area
+# TYPE lvm_pv_ba_size_bytes gauge
+lvm_pv_ba_size_bytes{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 0
+lvm_pv_ba_size_bytes{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 0
+# HELP lvm_pv_ba_start Offset to the start of PV Bootloader Area on the underlying device
+# TYPE lvm_pv_ba_start gauge
+lvm_pv_ba_start{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 0
+lvm_pv_ba_start{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 0
+# HELP lvm_pv_dev_size_bytes Size of underlying device
+# TYPE lvm_pv_dev_size_bytes gauge
+lvm_pv_dev_size_bytes{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 5.9e+10
+lvm_pv_dev_size_bytes{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 2.147483648e+11
+# HELP lvm_pv_duplicate Set if PV is an unchosen duplicate
+# TYPE lvm_pv_duplicate gauge
+lvm_pv_duplicate{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 0
+lvm_pv_duplicate{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 0
+# HELP lvm_pv_exported Set if this device is exported
+# TYPE lvm_pv_exported gauge
+lvm_pv_exported{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 0
+lvm_pv_exported{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 0
+# HELP lvm_pv_ext_vsn PV header extension version
+# TYPE lvm_pv_ext_vsn gauge
+lvm_pv_ext_vsn{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 2
+lvm_pv_ext_vsn{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 2
+# HELP lvm_pv_fmt Type of metadata
+# TYPE lvm_pv_fmt gauge
+lvm_pv_fmt{pv_fmt="lvm2",pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 1
+lvm_pv_fmt{pv_fmt="lvm2",pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 1
+# HELP lvm_pv_free_bytes Total amount of unallocated space
+# TYPE lvm_pv_free_bytes gauge
+lvm_pv_free_bytes{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 0
+lvm_pv_free_bytes{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 0
+# HELP lvm_pv_in_use Set if PV is used
+# TYPE lvm_pv_in_use gauge
+lvm_pv_in_use{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 1
+lvm_pv_in_use{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 1
+# HELP lvm_pv_info 
+# TYPE lvm_pv_info gauge
+lvm_pv_info{pv_attr="a--",pv_fmt="lvm2",pv_name="/dev/nvme1n1",pv_tags="",pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 1
+lvm_pv_info{pv_attr="a--",pv_fmt="lvm2",pv_name="/dev/nvme2n1",pv_tags="",pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 1
+# HELP lvm_pv_major Device major number
+# TYPE lvm_pv_major gauge
+lvm_pv_major{pv_major="259",pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 259
+lvm_pv_major{pv_major="259",pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 259
+# HELP lvm_pv_mda_count Number of metadata areas
+# TYPE lvm_pv_mda_count gauge
+lvm_pv_mda_count{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 1
+lvm_pv_mda_count{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 1
+# HELP lvm_pv_mda_free_bytes Free metadata area space
+# TYPE lvm_pv_mda_free_bytes gauge
+lvm_pv_mda_free_bytes{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 518144
+lvm_pv_mda_free_bytes{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 518144
+# HELP lvm_pv_mda_size_bytes Size of smallest metadata area
+# TYPE lvm_pv_mda_size_bytes gauge
+lvm_pv_mda_size_bytes{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 1.04448e+06
+lvm_pv_mda_size_bytes{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 1.04448e+06
+# HELP lvm_pv_mda_used_count Number of metadata areas in use
+# TYPE lvm_pv_mda_used_count gauge
+lvm_pv_mda_used_count{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 1
+lvm_pv_mda_used_count{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 1
+# HELP lvm_pv_minor Device minor number
+# TYPE lvm_pv_minor gauge
+lvm_pv_minor{pv_minor="1",pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 1
+lvm_pv_minor{pv_minor="2",pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 2
+# HELP lvm_pv_missing Set if this device is missing in system
+# TYPE lvm_pv_missing gauge
+lvm_pv_missing{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 0
+lvm_pv_missing{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 0
+# HELP lvm_pv_pe_alloc_count Total number of allocated Physical Extents
+# TYPE lvm_pv_pe_alloc_count gauge
+lvm_pv_pe_alloc_count{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 14066
+lvm_pv_pe_alloc_count{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 51199
+# HELP lvm_pv_pe_count Total number of Physical Extents
+# TYPE lvm_pv_pe_count gauge
+lvm_pv_pe_count{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 14066
+lvm_pv_pe_count{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 51199
+# HELP lvm_pv_pe_start Offset to the start of data on the underlying device
+# TYPE lvm_pv_pe_start gauge
+lvm_pv_pe_start{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 1.048576e+06
+lvm_pv_pe_start{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 1.048576e+06
+# HELP lvm_pv_size_bytes Size of PV
+# TYPE lvm_pv_size_bytes gauge
+lvm_pv_size_bytes{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 5.8997080064e+10
+lvm_pv_size_bytes{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 2.14744170496e+11
+# HELP lvm_pv_tags 
+# TYPE lvm_pv_tags gauge
+lvm_pv_tags{pv_tags="",pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 1
+lvm_pv_tags{pv_tags="",pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 1
+# HELP lvm_pv_used Total amount of allocated space
+# TYPE lvm_pv_used gauge
+lvm_pv_used{pv_uuid="KAPyRJ-O3a6-wHoA-k8lh-xnMN-VGxX-ARKOHU"} 5.8997080064e+10
+lvm_pv_used{pv_uuid="jdxg63-YOt9-TTeX-msrw-dyDl-iHr0-3RotR4"} 2.14744170496e+11
+# HELP lvm_unknown_field_count Fields reported by LVM not recognized by exporter
+# TYPE lvm_unknown_field_count gauge
+lvm_unknown_field_count{details="",group="lv"} 0
+lvm_unknown_field_count{details="",group="pv"} 0
+lvm_unknown_field_count{details="vg_autoactivation",group="vg"} 1
+# HELP lvm_up Whether scrape was successful
+# TYPE lvm_up gauge
+lvm_up{status=""} 1
+# HELP lvm_vg_allocation_policy 
+# TYPE lvm_vg_allocation_policy gauge
+lvm_vg_allocation_policy{vg_allocation_policy="normal",vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 1
+# HELP lvm_vg_attr 
+# TYPE lvm_vg_attr gauge
+lvm_vg_attr{vg_attr="wz--n-",vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 1
+# HELP lvm_vg_clustered Set if VG is clustered
+# TYPE lvm_vg_clustered gauge
+lvm_vg_clustered{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 0
+# HELP lvm_vg_exported Set if VG is exported
+# TYPE lvm_vg_exported gauge
+lvm_vg_exported{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 0
+# HELP lvm_vg_extendable Set if VG is extendable
+# TYPE lvm_vg_extendable gauge
+lvm_vg_extendable{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 1
+# HELP lvm_vg_extent_count Total number of Physical Extents
+# TYPE lvm_vg_extent_count gauge
+lvm_vg_extent_count{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 65265
+# HELP lvm_vg_extent_size_bytes Size of Physical Extents
+# TYPE lvm_vg_extent_size_bytes gauge
+lvm_vg_extent_size_bytes{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 4.194304e+06
+# HELP lvm_vg_fmt Type of metadata
+# TYPE lvm_vg_fmt gauge
+lvm_vg_fmt{vg_fmt="lvm2",vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 1
+# HELP lvm_vg_free_bytes Total amount of free space in bytes
+# TYPE lvm_vg_free_bytes gauge
+lvm_vg_free_bytes{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 0
+# HELP lvm_vg_free_count Total number of unallocated Physical Extents
+# TYPE lvm_vg_free_count gauge
+lvm_vg_free_count{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 0
+# HELP lvm_vg_info 
+# TYPE lvm_vg_info gauge
+lvm_vg_info{vg_allocation_policy="normal",vg_attr="wz--n-",vg_fmt="lvm2",vg_lock_args="",vg_lock_type="",vg_name="cached",vg_permissions="writeable",vg_systemid="",vg_tags="",vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 1
+# HELP lvm_vg_lock_args 
+# TYPE lvm_vg_lock_args gauge
+lvm_vg_lock_args{vg_lock_args="",vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 1
+# HELP lvm_vg_lock_type 
+# TYPE lvm_vg_lock_type gauge
+lvm_vg_lock_type{vg_lock_type="",vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 1
+# HELP lvm_vg_lv_count Number of LVs
+# TYPE lvm_vg_lv_count gauge
+lvm_vg_lv_count{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 1
+# HELP lvm_vg_max_lv Maximum number of LVs allowed in VG or 0 if unlimited
+# TYPE lvm_vg_max_lv gauge
+lvm_vg_max_lv{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 0
+# HELP lvm_vg_max_pv Maximum number of PVs allowed in VG or 0 if unlimited
+# TYPE lvm_vg_max_pv gauge
+lvm_vg_max_pv{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 0
+# HELP lvm_vg_mda_copies Target number of in use metadata areas in the VG
+# TYPE lvm_vg_mda_copies gauge
+lvm_vg_mda_copies{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 0
+# HELP lvm_vg_mda_count Number of metadata areas
+# TYPE lvm_vg_mda_count gauge
+lvm_vg_mda_count{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 2
+# HELP lvm_vg_mda_free_bytes Free metadata area space for this VG
+# TYPE lvm_vg_mda_free_bytes gauge
+lvm_vg_mda_free_bytes{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 518144
+# HELP lvm_vg_mda_size_bytes Size of smallest metadata area for this VG
+# TYPE lvm_vg_mda_size_bytes gauge
+lvm_vg_mda_size_bytes{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 1.04448e+06
+# HELP lvm_vg_mda_used_count Number of metadata areas in use on this VG
+# TYPE lvm_vg_mda_used_count gauge
+lvm_vg_mda_used_count{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 2
+# HELP lvm_vg_missing_pv_count Number of PVs in VG which are missing
+# TYPE lvm_vg_missing_pv_count gauge
+lvm_vg_missing_pv_count{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 0
+# HELP lvm_vg_partial Set if VG is partial
+# TYPE lvm_vg_partial gauge
+lvm_vg_partial{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 0
+# HELP lvm_vg_permissions 
+# TYPE lvm_vg_permissions gauge
+lvm_vg_permissions{vg_permissions="writeable",vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 1
+# HELP lvm_vg_pv_count Number of PVs in VG
+# TYPE lvm_vg_pv_count gauge
+lvm_vg_pv_count{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 2
+# HELP lvm_vg_seqno Revision number of internal metadata
+# TYPE lvm_vg_seqno gauge
+lvm_vg_seqno{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 27
+# HELP lvm_vg_shared Set if VG is shared
+# TYPE lvm_vg_shared gauge
+lvm_vg_shared{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 0
+# HELP lvm_vg_size_bytes Total size of VG in bytes
+# TYPE lvm_vg_size_bytes gauge
+lvm_vg_size_bytes{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 2.7374125056e+11
+# HELP lvm_vg_snap_count Number of snapshots
+# TYPE lvm_vg_snap_count gauge
+lvm_vg_snap_count{vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 0
+# HELP lvm_vg_systemid 
+# TYPE lvm_vg_systemid gauge
+lvm_vg_systemid{vg_systemid="",vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 1
+# HELP lvm_vg_tags 
+# TYPE lvm_vg_tags gauge
+lvm_vg_tags{vg_tags="",vg_uuid="DPRrbM-bHDz-pZrk-s137-szO4-wDHq-2VirlR"} 1
