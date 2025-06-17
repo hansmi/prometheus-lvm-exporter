@@ -49,6 +49,14 @@ func TestReader(t *testing.T) {
 				VG: []Row{},
 			},
 		},
+		{
+			name:  "escaped nulls in report",
+			input: `{"report": [{"vg": [{"a": "1\0\0\0"}], "lv": [{"a": "\02\0"}]}]}`,
+			want: &ReportData{
+				LV: []Row{{"a": "2"}},
+				VG: []Row{{"a": "1"}},
+			},
+		},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
 			for _, decodeCalls := range []int{0, 1, 7} {
