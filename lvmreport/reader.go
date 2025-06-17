@@ -1,6 +1,7 @@
 package lvmreport
 
 import (
+	"bytes"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -13,17 +14,14 @@ type root struct {
 }
 
 type reader struct {
-	dec  *json.Decoder
-	data *root
-	err  error
+	inner io.Reader
+	data  *root
+	err   error
 }
 
 func newReader(r io.Reader) *reader {
-	dec := json.NewDecoder(r)
-	dec.DisallowUnknownFields()
-
 	return &reader{
-		dec: dec,
+		inner: r,
 	}
 }
 
@@ -34,14 +32,38 @@ func (r *reader) Decode() {
 
 	var data root
 
-	if err := r.dec.Decode(&data); err != nil {
-		r.err = fmt.Errorf("decoding JSON failed: %w", err)
+	rawData, err := io.ReadAll(r.inner)
+	if err != nil {
+		r.err = fmt.Errorf("reading src data failed: %w", err)
 		return
+	}
+
+	dec := json.NewDecoder(bytes.NewReader(rawData))
+	dec.DisallowUnknownFields()
+
+	if err := dec.Decode(&data); err != nil {
+		var jsonErr *json.SyntaxError
+		if errors.As(err, &jsonErr) {
+			// LVM has a bug which can add escaped null literals (`\0`) in strings
+			// This is invalid JSON, so we attempt to work around it by just removing all escaped nulls
+			fixedRawData := bytes.ReplaceAll(rawData, []byte{'\\', '0'}, []byte{})
+
+			dec = json.NewDecoder(bytes.NewReader(fixedRawData))
+			dec.DisallowUnknownFields()
+
+			if err := dec.Decode(&data); err != nil {
+				r.err = fmt.Errorf("decoding JSON failed: %w", err)
+				return
+			}
+		} else {
+			r.err = fmt.Errorf("decoding JSON failed: %w", err)
+			return
+		}
 	}
 
 	var placeholder struct{}
 
-	if err := r.dec.Decode(&placeholder); err == nil || !errors.Is(err, io.EOF) {
+	if err := dec.Decode(&placeholder); err == nil || !errors.Is(err, io.EOF) {
 		r.err = fmt.Errorf("extra data after JSON fragment: %w", err)
 		return
 	}
