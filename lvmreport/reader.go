@@ -6,6 +6,8 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"slices"
+	"strings"
 )
 
 type root struct {
@@ -25,12 +27,96 @@ func newReader(r io.Reader) *reader {
 	}
 }
 
+func decode(raw []byte, v any) error {
+	var dec *json.Decoder
+	var recovery struct {
+		original error
+
+		started  bool
+		offset   int
+		nullDone bool
+	}
+
+	for {
+		dec = json.NewDecoder(bytes.NewReader(raw))
+		dec.DisallowUnknownFields()
+
+		err := dec.Decode(v)
+		if err == nil {
+			break
+		}
+
+		var errSyntax *json.SyntaxError
+
+		// Workaround for incorrect JSON escaping in LVM. Backslashes in
+		// strings are emitted without escaping. A "\0" in a device ID triggers
+		// "invalid character '0' in string escape code". The troublesome
+		// characters are prefixed with another backslash before parsing is
+		// attempted once more.
+		//
+		// https://gitlab.com/lvmteam/lvm2/-/issues/35
+		// https://github.com/hansmi/prometheus-lvm-exporter/issues/92
+		if errors.As(err, &errSyntax) && strings.HasPrefix(errSyntax.Error(), "invalid character") {
+			if !recovery.started {
+				// Keep error from before recovery attempts.
+				recovery.original = err
+
+				recovery.started = true
+
+				// Make modifications on a local slice.
+				raw = slices.Clone(raw)
+
+				if !recovery.nullDone {
+					// "\0" is common enough that a full replace can be done at
+					// once.
+					if idx := bytes.Index(raw, []byte("\\0")); idx >= 0 {
+						modified := bytes.ReplaceAll(raw[idx:], []byte("\\0"), []byte("\\\\0"))
+
+						raw = slices.Replace(raw, idx, len(raw), modified...)
+
+						recovery.nullDone = true
+						continue
+					}
+				}
+			}
+
+			if offset := int(errSyntax.Offset); offset > recovery.offset {
+				const maxEscapeLength = 10
+
+				start := max(recovery.offset, offset-maxEscapeLength)
+
+				// Never look further back than the previous error.
+				recovery.offset = offset
+
+				if idx := bytes.LastIndexByte(raw[start:offset], '\\'); idx >= 0 {
+					// Add a backslash before the invalid character.
+					raw = slices.Insert(raw, start+idx, '\\')
+
+					continue
+				}
+			}
+		}
+
+		if recovery.original != nil {
+			err = recovery.original
+		}
+
+		return fmt.Errorf("decoding JSON: %w", err)
+	}
+
+	var placeholder struct{}
+
+	if err := dec.Decode(&placeholder); err == nil || !errors.Is(err, io.EOF) {
+		return fmt.Errorf("extra data after JSON fragment: %w", err)
+	}
+
+	return nil
+}
+
 func (r *reader) Decode() {
 	if !(r.err == nil && r.data == nil) {
 		return
 	}
-
-	var data root
 
 	rawData, err := io.ReadAll(r.inner)
 	if err != nil {
@@ -38,41 +124,11 @@ func (r *reader) Decode() {
 		return
 	}
 
-	dec := json.NewDecoder(bytes.NewReader(rawData))
-	dec.DisallowUnknownFields()
+	var data root
 
-	if err := dec.Decode(&data); err != nil {
-		var jsonErr *json.SyntaxError
-		if errors.As(err, &jsonErr) {
-			// Workaround for incorrect JSON escaping in LVM. Backslashes
-			// in strings are emitted without escaping. A "\0" in a device ID
-			// triggers "invalid character '0' in string escape code".
-			//
-			// https://gitlab.com/lvmteam/lvm2/-/issues/35
-			// https://github.com/hansmi/prometheus-lvm-exporter/issues/92
-			fixedRawData := bytes.ReplaceAll(rawData, []byte("\\0"), nil)
-
-			dec = json.NewDecoder(bytes.NewReader(fixedRawData))
-			dec.DisallowUnknownFields()
-
-			if err := dec.Decode(&data); err != nil {
-				r.err = fmt.Errorf("decoding JSON failed: %w", err)
-				return
-			}
-		} else {
-			r.err = fmt.Errorf("decoding JSON failed: %w", err)
-			return
-		}
+	if r.err = decode(rawData, &data); r.err == nil {
+		r.data = &data
 	}
-
-	var placeholder struct{}
-
-	if err := dec.Decode(&placeholder); err == nil || !errors.Is(err, io.EOF) {
-		r.err = fmt.Errorf("extra data after JSON fragment: %w", err)
-		return
-	}
-
-	r.data = &data
 }
 
 func (r *reader) Data() (*ReportData, error) {

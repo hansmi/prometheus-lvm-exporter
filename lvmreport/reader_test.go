@@ -12,6 +12,82 @@ import (
 	"github.com/google/go-cmp/cmp/cmpopts"
 )
 
+func TestDecode(t *testing.T) {
+	for _, tc := range []struct {
+		name    string
+		input   string
+		want    any
+		wantErr error
+	}{
+		{
+			name:    "empty",
+			wantErr: io.EOF,
+		},
+		{
+			name:  "valid JSON",
+			input: `{"hello": "world"}`,
+			want:  map[string]any{"hello": "world"},
+		},
+		{
+			name:  "bad escape",
+			input: `{"name": "zero\0null"}`,
+			want:  map[string]any{"name": `zero\0null`},
+		},
+		{
+			name:  "multiple bad escapes",
+			input: `{"v": "zero=\u0000, zero.bad=\x00, bad=\z, newline=\\\n, end"}`,
+			want: map[string]any{
+				"v": "zero=\x00, zero.bad=\\x00, bad=\\z, newline=\\\n, end",
+			},
+		},
+		{
+			name:  "single null",
+			input: `"\0"`,
+			want:  `\0`,
+		},
+		{
+			name:  "null only",
+			input: `"\0\0\0\0"`,
+			want:  `\0\0\0\0`,
+		},
+		{
+			name:  "mixed",
+			input: `"\01234\t\1\u2603\2\uAAA_\3\x\y\z"`,
+			want:  "\\01234\t\\1\u2603\\2\\uAAA_\\3\\x\\y\\z",
+		},
+		{
+			name:    "single backslash in string",
+			input:   `"\"`,
+			wantErr: io.ErrUnexpectedEOF,
+		},
+		{
+			name:    "backslash only",
+			input:   `\\\\\\`,
+			wantErr: cmpopts.AnyError,
+		},
+		{
+			name:    "extra content",
+			input:   `{}{}`,
+			want:    map[string]any{},
+			wantErr: cmpopts.AnyError,
+		},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			var value any
+
+			err := decode([]byte(tc.input), &value)
+
+			if diff := cmp.Diff(tc.wantErr, err, cmpopts.EquateErrors()); diff != "" {
+				t.Errorf("decode() error diff (-want +got):\n%s", diff)
+			}
+
+			if diff := cmp.Diff(tc.want, value, cmpopts.EquateEmpty()); diff != "" {
+				t.Errorf("decode() result diff (-want +got):\n%s", diff)
+			}
+		})
+	}
+}
+
 func TestReader(t *testing.T) {
 	for _, tc := range []struct {
 		name       string
@@ -53,8 +129,8 @@ func TestReader(t *testing.T) {
 			name:  "escaped nulls in report",
 			input: `{"report": [{"vg": [{"a": "1\0\0\0"}], "lv": [{"a": "\02\0"}]}]}`,
 			want: &ReportData{
-				LV: []Row{{"a": "2"}},
-				VG: []Row{{"a": "1"}},
+				LV: []Row{{"a": `\02\0`}},
+				VG: []Row{{"a": `1\0\0\0`}},
 			},
 		},
 	} {
