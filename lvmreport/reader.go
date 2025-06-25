@@ -44,9 +44,13 @@ func (r *reader) Decode() {
 	if err := dec.Decode(&data); err != nil {
 		var jsonErr *json.SyntaxError
 		if errors.As(err, &jsonErr) {
-			// LVM has a bug which can add escaped null literals (`\0`) in strings
-			// This is invalid JSON, so we attempt to work around it by just removing all escaped nulls
-			fixedRawData := bytes.ReplaceAll(rawData, []byte{'\\', '0'}, []byte{})
+			// Workaround for incorrect JSON escaping in LVM. Backslashes
+			// in strings are emitted without escaping. A "\0" in a device ID
+			// triggers "invalid character '0' in string escape code".
+			//
+			// https://gitlab.com/lvmteam/lvm2/-/issues/35
+			// https://github.com/hansmi/prometheus-lvm-exporter/issues/92
+			fixedRawData := bytes.ReplaceAll(rawData, []byte("\\0"), nil)
 
 			dec = json.NewDecoder(bytes.NewReader(fixedRawData))
 			dec.DisallowUnknownFields()
