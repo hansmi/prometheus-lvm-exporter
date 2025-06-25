@@ -80,7 +80,9 @@ func runCommand(ctx context.Context, args []string) (*ReportData, error) {
 		r.Decode()
 
 		if err = cmd.Wait(); err == nil {
-			data, err = r.Data()
+			if data, err = r.Data(); err != nil {
+				return nil, fmt.Errorf("decoding output: %w", err)
+			}
 		}
 	}
 
