@@ -48,7 +48,8 @@ nfpms:
       postremove: "contrib/postremove.sh"
 
 archives:
-  - format: tar.gz
+  - formats:
+      - tar.gz
     wrap_in_directory: true
     files:
       - LICENSE
