@@ -1,0 +1,15 @@
+FROM docker.io/library/alpine:latest
+
+RUN apk add --no-cache lvm2
+
+LABEL org.opencontainers.image.licenses=BSD-3-Clause
+LABEL org.opencontainers.image.description="Prometheus exporter for LVM metrics"
+
+WORKDIR /
+
+COPY LICENSE README.md /
+COPY prometheus-lvm-exporter /
+
+ENTRYPOINT ["/prometheus-lvm-exporter", "--command=/sbin/lvm", "--no-legacy-info-labels"]
+
+# vim: set ft=dockerfile :
