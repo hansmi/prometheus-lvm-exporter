@@ -72,6 +72,7 @@ func TestCollector(t *testing.T) {
 		{name: "issue29-vdo-online"},
 		{name: "issue30-lockargs"},
 		{name: "issue76-log"},
+		{name: "issue105-thin-pool"},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
 			for _, enableLegacyInfoLabels := range []bool{false, true} {
