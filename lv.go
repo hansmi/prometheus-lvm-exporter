@@ -152,6 +152,11 @@ var lvGroup = &group{
 			desc:       "LV permissions",
 		},
 		{
+			fieldName:  "lv_profile",
+			metricName: "lv_profile",
+			desc:       "Configuration profile attached to this LV",
+		},
+		{
 			fieldName:  "lv_role",
 			metricName: "lv_role",
 			desc:       "LV role",
@@ -396,11 +401,6 @@ var lvGroup = &group{
 			metricName: "lv_minor",
 			flags:      asRawLabel,
 			desc:       "Persistent minor number or -1 if not persistent",
-		},
-		{
-			fieldName:  "lv_profile",
-			metricName: "lv_profile",
-			desc:       "Configuration profile attached to this LV",
 		},
 		{
 			fieldName:  "lv_read_ahead",

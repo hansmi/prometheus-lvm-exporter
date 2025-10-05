@@ -218,6 +218,10 @@ lvm_lv_pool_lv{lv_pool_lv="",lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 1
 # TYPE lvm_lv_pool_lv_uuid gauge
 lvm_lv_pool_lv_uuid{lv_pool_lv_uuid="",lv_uuid="BUfEXc-saxE-kJyd-A1Jj-C8fw-GdtX-fBhepo"} 1
 lvm_lv_pool_lv_uuid{lv_pool_lv_uuid="",lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 1
+# HELP lvm_lv_profile Configuration profile attached to this LV
+# TYPE lvm_lv_profile gauge
+lvm_lv_profile{lv_profile="",lv_uuid="BUfEXc-saxE-kJyd-A1Jj-C8fw-GdtX-fBhepo"} 1
+lvm_lv_profile{lv_profile="",lv_uuid="ijb7Yx-rXx5-uU9j-Gv5g-eZi4-yYX8-o3yNJu"} 1
 # HELP lvm_lv_raid_sync_action For RAID, the current synchronization action being performed
 # TYPE lvm_lv_raid_sync_action gauge
 lvm_lv_raid_sync_action{lv_raid_sync_action="",lv_uuid="BUfEXc-saxE-kJyd-A1Jj-C8fw-GdtX-fBhepo"} 1

@@ -481,6 +481,14 @@ lvm_lv_pool_lv_uuid{lv_pool_lv_uuid="",lv_uuid="ecsqFI-XwKp-2nnY-DxMG-6ezh-wI2g-
 lvm_lv_pool_lv_uuid{lv_pool_lv_uuid="",lv_uuid="i3KUcx-M3FS-wgi2-xKDp-4YGW-Zuvj-OGjRop"} 1
 lvm_lv_pool_lv_uuid{lv_pool_lv_uuid="",lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ"} 1
 lvm_lv_pool_lv_uuid{lv_pool_lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ",lv_uuid="GgXmtF-MFKw-Rqal-cffB-c3xj-9sJf-Rm7t9S"} 1
+# HELP lvm_lv_profile Configuration profile attached to this LV
+# TYPE lvm_lv_profile gauge
+lvm_lv_profile{lv_profile="",lv_uuid="6nDiR2-rlXW-IN0z-HsGH-7UUY-eTZJ-TJPiH0"} 1
+lvm_lv_profile{lv_profile="",lv_uuid="GgXmtF-MFKw-Rqal-cffB-c3xj-9sJf-Rm7t9S"} 1
+lvm_lv_profile{lv_profile="",lv_uuid="NmOksX-BefX-Inky-H625-uOYO-I2iR-REM2ij"} 1
+lvm_lv_profile{lv_profile="",lv_uuid="ecsqFI-XwKp-2nnY-DxMG-6ezh-wI2g-jo0tgd"} 1
+lvm_lv_profile{lv_profile="",lv_uuid="i3KUcx-M3FS-wgi2-xKDp-4YGW-Zuvj-OGjRop"} 1
+lvm_lv_profile{lv_profile="",lv_uuid="nadEsV-P4Qp-2zh2-5trW-36R0-QdoM-cwG2hJ"} 1
 # HELP lvm_lv_raid_sync_action For RAID, the current synchronization action being performed
 # TYPE lvm_lv_raid_sync_action gauge
 lvm_lv_raid_sync_action{lv_raid_sync_action="",lv_uuid="6nDiR2-rlXW-IN0z-HsGH-7UUY-eTZJ-TJPiH0"} 1
